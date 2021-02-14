@@ -1,17 +1,6 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
 const Home = () => {
-  const func = async () => {
-    const request = axios.get("/leaderboard/challenger");
-    const result = request.data;
-  console.log(result);
-  };
-
-  useEffect(() => { 
-    func(); 
-  }, [])
-
   return <>Home</>;
 };
 
