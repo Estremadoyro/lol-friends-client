@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Leaderboard
 
-![alt text](https://ibb.co/KKqhs2y)
+![alt text](https://i.ibb.co/2ZthMvK/Leaderboard-v1-0-alpha.png)
 
 ## Available Scripts
 
