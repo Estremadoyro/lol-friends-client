@@ -26,7 +26,7 @@ export const selectRegion = {
     },
     {
       name: "RUSSIA",
-      value: "ru1",
+      value: "ru",
     },
     {
       name: "TURKEY",

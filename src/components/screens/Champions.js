@@ -1,11 +1,12 @@
-import React from 'react'; 
+import React from "react";
+import { WRPie } from "../WRPie";
 
-const Champions = () => { 
+const Champions = () => {
   return (
     <>
-    Champions
+    Champions owo
     </>
-  )
-}
+  );
+};
 
-export default Champions; 
+export default Champions;
