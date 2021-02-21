@@ -5,20 +5,20 @@ import { HorizontalBar } from "react-chartjs-2";
 
 import "../styles/WRPie.css";
 
-export const WRPie = (props) => {
+export const TestChart = () => {
   const data = {
     labels: ["Record"],
     datasets: [
       {
         label: "Wins",
-        data: [props.wins],
+        data: [10],
         backgroundColor: ["rgba(54,162,235,0.2)"],
         borderColor: ["rgba(54,162,235,1)"],
         borderWidth: 1,
       },
       {
         label: "Losses",
-        data: [props.losses],
+        data: [15],
         backgroundColor: ["rgba(255, 99, 132, 0.2)"],
         borderColor: ["rgba(255, 99, 132, 1)"],
         borderWidth: 1,
@@ -46,7 +46,6 @@ export const WRPie = (props) => {
     maintainAspectRatio: false,
     reverse: false,
     responsive: true,
-    tooltips: false,
     legend: {
       display: false,
     },
@@ -70,7 +69,7 @@ export const WRPie = (props) => {
           ticks: {
             display: false,
             beginAtZero: true,
-            max: props.wins + props.losses,
+            max: 25,
           },
           gridLines: {
             display: false,
@@ -81,7 +80,7 @@ export const WRPie = (props) => {
     },
   };
   return (
-    <div className="wrapper mx-auto">
+    <div className="wrapper">
       <HorizontalBar data={data} options={options} />
     </div>
   );

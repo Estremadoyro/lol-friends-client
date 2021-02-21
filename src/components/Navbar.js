@@ -41,8 +41,9 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <Region />
+
         </div>
+          <Region />
       </nav>
     </>
   );

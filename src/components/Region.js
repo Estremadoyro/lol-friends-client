@@ -13,7 +13,7 @@ const Region = () => {
       <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
         <li className="nav-item">
           <select
-            className="region-button btn btn-success btn-lg"
+            className="region-button btn w-100  btn-success btn-lg"
             aria-expanded="false"
             value={region.name}
             onChange={(e) => {
@@ -23,7 +23,7 @@ const Region = () => {
           >
             {selectRegion.regions.map((region) => {
               return (
-                <option key={region.value} value={region.value}>
+                <option key={region.value} value={region.value} className="text-center">
                   {region.name}
                 </option>
               );

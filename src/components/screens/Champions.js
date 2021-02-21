@@ -1,10 +1,11 @@
 import React from "react";
-import { WRPie } from "../WRPie";
+import { TestChart } from "../TestChart";
 
 const Champions = () => {
   return (
     <>
-    Champions owo
+      Champions owo
+      <TestChart />
     </>
   );
 };
