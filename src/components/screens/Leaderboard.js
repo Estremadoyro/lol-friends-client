@@ -9,6 +9,7 @@ import { WRPie } from "../WRPie";
 import { WRPerc } from "../WRPerc";
 
 import "../../styles/Leaderboard.css";
+import { Countdown } from "../Countdown";
 
 const Leaderboard = () => {
   const { region, rank } = useSettingsContext();
@@ -49,6 +50,7 @@ const Leaderboard = () => {
     <>
       <div className="container text-center" style={{ maxWidth: "720px" }}>
         <RankSelector loading={loading} />
+        <Countdown />
         <div className="table-responsive">
           <table className="table mx-auto w-auto">
             <thead>
@@ -65,6 +67,9 @@ const Leaderboard = () => {
                 <th className="header" scope="col">
                   WR
                 </th>
+                <th className="header" scope="col">
+                  Update
+                </th>
               </tr>
             </thead>
 
@@ -73,7 +78,7 @@ const Leaderboard = () => {
                 <tr>
                   <td
                     className="align-middle"
-                    colSpan="4"
+                    colSpan="5"
                     style={{ border: "none" }}
                   >
                     {" "}
@@ -110,6 +115,11 @@ const Leaderboard = () => {
                         </td>
                         <td className="align-middle">
                           <WRPerc wins={player.wins} losses={player.losses} />
+                        </td>
+                        <td className="align-middle">
+                          <span className="position-new">5</span>
+                          <i class="fas fa-caret-square-up rank-up mx-2"></i>
+                          <i class="far fa-minus-square rank-same"></i>
                         </td>
                       </tr>
                     );

@@ -21,3 +21,13 @@ th {
 .rank-badge-default {
   background-color: #6c757d;
 }
+
+.rank-up {
+  color: #81cef6;
+}
+.rank-down {
+  color: #dc3545;
+}
+.rank-same {
+  color: #6c757d;
+}
