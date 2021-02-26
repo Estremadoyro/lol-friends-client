@@ -3,26 +3,28 @@ import React, { useEffect, useState } from "react";
 import { useSettingsContext } from "../../contexts/SettingsContext";
 import { gLeaderboard } from "../../api/LeaderboardAPI";
 import { Loading } from "../../misc/Loading";
+import { RankSelector } from "../RankSelector";
+
 import { WRPie } from "../WRPie";
 import { WRPerc } from "../WRPerc";
 
 import "../../styles/Leaderboard.css";
 
 const Leaderboard = () => {
-  const { region } = useSettingsContext();
+  const { region, rank } = useSettingsContext();
 
   const [queue, setQueue] = useState("RANKED_SOLO_5x5");
-  const [rank, setRank] = useState("CHALLENGER");
   const [page, setPage] = useState(1);
-
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [players, setPlayers] = useState([]);
+  let count = 0;
 
   const getPlayers = async () => {
     setLoading(true);
     let u = false;
     const fetchPlayers = await gLeaderboard(region, queue, rank, page);
+    //nasty flags used to prevent memory leaks, gotta find a better way...
     if (!u) {
       if (fetchPlayers.error) {
         setError(fetchPlayers.error);
@@ -41,29 +43,28 @@ const Leaderboard = () => {
 
   useEffect(() => {
     getPlayers();
-  }, [region]);
+  }, [region, rank]);
 
   return (
     <>
       <div className="container text-center" style={{ maxWidth: "720px" }}>
-        <button type="button" className="btn btn-primary btn-lg">
-          CHALLENGER
-        </button>
-        <button type="button" className="btn btn-primary btn-lg">
-          GRANDMASTER
-        </button>
-        <button type="button" className="btn btn-primary btn-lg">
-          MASTER
-        </button>
+        <RankSelector loading={loading} />
         <div className="table-responsive">
           <table className="table mx-auto w-auto">
             <thead>
               <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Player</th>
-                <th scope="col">LP</th>
-                <th scope="col">Record</th>
-                <th scope="col">WR</th>
+                <th className="header" scope="col">
+                  Player
+                </th>
+                <th className="header" scope="col">
+                  LP
+                </th>
+                <th className="header" scope="col">
+                  Record
+                </th>
+                <th className="header" scope="col">
+                  WR
+                </th>
               </tr>
             </thead>
 
@@ -72,7 +73,7 @@ const Leaderboard = () => {
                 <tr>
                   <td
                     className="align-middle"
-                    colSpan="5"
+                    colSpan="4"
                     style={{ border: "none" }}
                   >
                     {" "}
@@ -83,11 +84,23 @@ const Leaderboard = () => {
 
               {players && !loading
                 ? players.map((player) => {
+                    count++;
                     console.log(player);
                     return (
                       <tr key={player.summonerId}>
-                        <td className="align-middle">1</td>
-                        <td className="align-middle">{player.summonerName}</td>
+                        <td
+                          className="align-middle"
+                          style={{ textAlign: "left" }}
+                        >
+                          <span
+                            className={`badge rank-badge-${
+                              count < 4 ? count : "default"
+                            } m-2`}
+                          >
+                            {count}
+                          </span>
+                          {player.summonerName}
+                        </td>
                         <td className="align-middle">
                           {" "}
                           {player.leaguePoints} LP{" "}

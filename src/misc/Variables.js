@@ -38,3 +38,20 @@ export const selectRegion = {
     },
   ],
 };
+
+export const selectRank = {
+  ranks: [
+    {
+      name: "CHALLENGER",
+      value: "CHALLENGER",
+    },
+    {
+      name: "GRANDMASTER",
+      value: "GRANDMASTER",
+    },
+    {
+      name: "MASTER",
+      value: "MASTER",
+    },
+  ],
+};

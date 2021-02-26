@@ -7,6 +7,29 @@ body {
   margin: 0;
   padding: 0;
 }
+.navbar-toggler {
+  border: 0px;
+}
+.bg-dark {
+  background-color: #6466f5 !important;
+}
+.navbar-toggler-icon {
+  color: #fff;
+}
+.nav-link {
+  color: #fff;
+}
+.navbar-brand {
+  color: #61dafa;
+  font-size: 1.65rem;
+  font-weight: bold;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 @media (min-width: 768px) {
   .navbar-brand.abs {
@@ -15,5 +38,4 @@ body {
     left: 0;
     text-align: center;
   }
-  
 }

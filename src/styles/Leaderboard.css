@@ -1,1 +1,23 @@
 /* Leaderboard.css */
+th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0px;
+  background: #fff;
+}
+th {
+  color: #5e60ce;
+}
+.rank-badge-1 {
+  background-color: #ffc107;
+}
+.rank-badge-2 {
+  background-color: #0d6efd;
+}
+.rank-badge-3 {
+  background-color: #dc3545;
+}
+
+.rank-badge-default {
+  background-color: #6c757d;
+}

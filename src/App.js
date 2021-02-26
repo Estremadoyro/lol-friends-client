@@ -8,6 +8,7 @@ import Champions from "./components/screens/Champions";
 import { SettingsContextProvider } from "./contexts/SettingsContext";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/leaderboard" component={Leaderboard} exact />
           <Route path="/champions" component={Champions} exact />
+          <Footer />
         </SettingsContextProvider>
       </BrowserRouter>
     </Fragment>

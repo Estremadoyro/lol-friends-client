@@ -2,7 +2,9 @@
   border-radius: 0 !important;
   width: 200px;
   font-weight: bold;
-  font-size: 150%;
+  font-size: 1.55rem;
+  background-color: #a398ffbd;
+  color: #fff !important;
 }
 .select.option.is-selected {
   display: none;
