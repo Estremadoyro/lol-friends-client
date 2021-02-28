@@ -10,21 +10,21 @@ import { WRPerc } from "../WRPerc";
 
 import "../../styles/Leaderboard.css";
 import { Countdown } from "../Countdown";
+import { UpdatedRank } from "../UpdatedRank";
 
 const Leaderboard = () => {
   const { region, rank } = useSettingsContext();
 
   const [queue, setQueue] = useState("RANKED_SOLO_5x5");
-  const [page, setPage] = useState(1);
+  const [division, setDivision] = useState("I");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [players, setPlayers] = useState([]);
-  let count = 0;
 
   const getPlayers = async () => {
     setLoading(true);
     let u = false;
-    const fetchPlayers = await gLeaderboard(region, queue, rank, page);
+    const fetchPlayers = await gLeaderboard(region, queue, rank, division);
     //nasty flags used to prevent memory leaks, gotta find a better way...
     if (!u) {
       if (fetchPlayers.error) {
@@ -89,7 +89,6 @@ const Leaderboard = () => {
 
               {players && !loading
                 ? players.map((player) => {
-                    count++;
                     console.log(player);
                     return (
                       <tr key={player.summonerId}>
@@ -99,10 +98,10 @@ const Leaderboard = () => {
                         >
                           <span
                             className={`badge rank-badge-${
-                              count < 4 ? count : "default"
+                              player.rank < 4 ? player.rank : "default"
                             } m-2`}
                           >
-                            {count}
+                            {player.rank}
                           </span>
                           {player.summonerName}
                         </td>
@@ -117,9 +116,10 @@ const Leaderboard = () => {
                           <WRPerc wins={player.wins} losses={player.losses} />
                         </td>
                         <td className="align-middle">
-                          <span className="position-new">5</span>
-                          <i class="fas fa-caret-square-up rank-up mx-2"></i>
-                          <i class="far fa-minus-square rank-same"></i>
+                          <UpdatedRank
+                            rankUpdate={player.rankUpdate}
+                            rankPosition={player.rankOffset}
+                          />
                         </td>
                       </tr>
                     );
