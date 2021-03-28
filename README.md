@@ -1,23 +1,33 @@
 # LoL Friends App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+League of Legends app built with using the MERN stack, aiming to add features not seen in other popular apps like op.gg or u.gg.
 
-## Summoner Search
+![alt text](https://i.ibb.co/xLFVmTZ/rsz-1rsz-1rsz-screenshot-from-2021-03-27-23-51-00.png)
 
-### Working on
+See also: https://github.com/Estremadoyro/lol-friends-server
+
+## TODO features:
+
+-   Summoner Search
+-   Report player
+-   Custom leaderboard with friends
+-   Champion statistics
+-   This or That alike section
+
+## Working on
 
 ## Leaderboard
 
-![alt text](https://i.ibb.co/2ZthMvK/Leaderboard-v1-0-alpha.png)
+-   Leaderboard table which updates every 30 for Master league and 24hrs for Grandmaster+
+-   Shows ladder updates, went up, down, stay or new.
+-   Winrate colored
+    -   Gold >= 65%
+    -   Blue >= 50%
+    -   Red < 50%
+        ![alt text](https://i.ibb.co/Y74NRZ8/Screenshot-from-2021-03-27-23-28-24.png)
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.

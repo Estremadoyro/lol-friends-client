@@ -24,22 +24,26 @@ const Leaderboard = () => {
   const getPlayers = async () => {
     setLoading(true);
     let u = false;
-    const fetchPlayers = await gLeaderboard(region, queue, rank, division);
-    //nasty flags used to prevent memory leaks, gotta find a better way...
-    if (!u) {
-      if (fetchPlayers.error) {
-        setError(fetchPlayers.error);
+    try {
+      const fetchPlayers = await gLeaderboard(region, queue, rank, division);
+      //nasty flags used to prevent memory leaks, gotta find a better way...
+      if (!u) {
+        if (fetchPlayers.error) {
+          setError(fetchPlayers.error);
 
-        console.log(fetchPlayers.error);
-      } else {
-        console.log(fetchPlayers.data.players);
-        setPlayers(fetchPlayers.data.players);
+          console.log(fetchPlayers.error);
+        } else {
+          console.log(fetchPlayers.data.players);
+          setPlayers(fetchPlayers.data.players);
+        }
       }
+      setLoading(false);
+      return () => {
+        u = true;
+      };
+    } catch (err) {
+      console.log(err);
     }
-    setLoading(false);
-    return () => {
-      u = true;
-    };
   };
 
   useEffect(() => {
@@ -118,7 +122,7 @@ const Leaderboard = () => {
                         <td className="align-middle">
                           <UpdatedRank
                             rankUpdate={player.rankUpdate}
-                            rankPosition={player.rankOffset}
+                            rankOffset={player.rankOffset}
                           />
                         </td>
                       </tr>
