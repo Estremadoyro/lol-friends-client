@@ -7,12 +7,20 @@ export const WRPerc = (props) => {
   const red = "rgb(251 99 132)";
   const golden = "#CCA43D";
 
-  return(
+  return (
     <>
-    <span style={(wr >= 60 ? {color: golden}  : (wr >= 50 ? {color: blue} : {color: red}))}
-          className="fw-bold">
-    {wr}%
+      <span
+        style={
+          wr >= 60
+            ? { color: golden }
+            : wr >= 50
+            ? { color: blue }
+            : { color: red }
+        }
+        className="fw-bold"
+      >
+        {wr}%
       </span>
     </>
-  ) 
+  );
 };

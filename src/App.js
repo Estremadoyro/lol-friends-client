@@ -4,9 +4,9 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/screens/Home";
 import Leaderboard from "./components/screens/Leaderboard";
 import Champions from "./components/screens/Champions";
+import Reports from "./components/screens/Reports";
 
 import { SettingsContextProvider } from "./contexts/SettingsContext";
-
 import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 
@@ -19,6 +19,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/leaderboard" component={Leaderboard} exact />
           <Route path="/champions" component={Champions} exact />
+          <Route path="/reports" component={Reports} exact />
         </SettingsContextProvider>
       </BrowserRouter>
     </Fragment>

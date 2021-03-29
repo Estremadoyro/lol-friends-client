@@ -40,6 +40,11 @@ const Navbar = () => {
                 Champions
               </Link>
             </li>
+            <li className="nav-item mx-3">
+              <Link className="nav-link" to="/reports">
+                Reports
+              </Link>
+            </li>
           </ul>
         </div>
         <Region />
