@@ -1,7 +1,14 @@
 import React from "react";
 
-import Logo from "../static/home-logo-2.png";
+import Logo from "../static/lol-friends-logos/vector/default-monochrome.svg";
+import "../styles/HomeLogo.css"
 
 export const HomeLogo = () => {
-  return <img className="img-fluid mx-auto d-block" src={Logo} />;
+  return (
+    <>
+      <div className="container-fluid my-4">
+        <img className="mx-auto d-block" src={Logo} />
+      </div>
+    </>
+  );
 };

@@ -19,7 +19,7 @@ export const SearchSummonerBar = () => {
           placeholder="Rekkles, Runewolf, Sethsu ..."
           onChange={(e) => setSummoner(e.target.value)}
         />
-        <button className="btn btn-primary btn-block w-100" type="submit">
+        <button className="btn home-summoner-btn btn-block w-100" type="submit">
           Find player owo!
         </button>
       </form>

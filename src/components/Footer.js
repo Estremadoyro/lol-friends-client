@@ -4,8 +4,8 @@ export const Footer = () => {
   return (
     <Fragment>
       <footer
-        className="footer text-center text-white"
-        style={{ backgroundColor: "#6466f5" }}
+        className="footer sticky-bottom text-center text-white"
+        style={{ backgroundColor: "#928afc" }}
       >
         <div className="container">
           <section className="mb-4">

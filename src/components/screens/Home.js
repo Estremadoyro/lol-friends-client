@@ -2,6 +2,7 @@ import React from "react";
 import { Footer } from "../Footer";
 import { SearchSummonerBar } from "../SearchSummonerBar";
 import { HomeLogo } from "../HomeLogo";
+import { HomeNews } from "../HomeNews";
 const Home = () => {
   return (
     <>
@@ -9,6 +10,7 @@ const Home = () => {
         <div className="col">
           <HomeLogo />
           <SearchSummonerBar />
+          <HomeNews />
         </div>
       </div>
       <Footer />
