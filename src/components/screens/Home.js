@@ -6,12 +6,14 @@ import { HomeNews } from "../HomeNews";
 const Home = () => {
   return (
     <>
-      <div className="container d-flex justify-content-center">
-        <div className="col">
-          <HomeLogo />
-          <SearchSummonerBar />
-          <HomeNews />
-        </div>
+      {/* <div className="container d-flex h-100 justify-content-center"> */}
+      <div
+        className="container d-flex flex-column"
+        style={{ maxWidth: "800px" }}
+      >
+        <HomeLogo />
+        <SearchSummonerBar />
+        <HomeNews />
       </div>
       <Footer />
     </>
