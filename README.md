@@ -8,13 +8,19 @@ See also: https://github.com/Estremadoyro/lol-friends-server
 
 ## TODO features:
 
--   Summoner Search
 -   Report player
 -   Custom leaderboard with friends
 -   Champion statistics
 -   This or That alike section
 
 ## Working on
+
+-   Search lol players across all servers
+-   News section redirected to surrender20.com
+
+![alt text](https://i.ibb.co/c11NTvw/unknown.png)
+
+## Summoner Search
 
 ## Leaderboard
 
