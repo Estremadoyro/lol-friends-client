@@ -15,12 +15,12 @@ See also: https://github.com/Estremadoyro/lol-friends-server
 
 ## Working on
 
+## Summoner Search
+
 -   Search lol players across all servers
 -   News section redirected to surrender20.com
 
 ![alt text](https://i.ibb.co/c11NTvw/unknown.png)
-
-## Summoner Search
 
 ## Leaderboard
 
