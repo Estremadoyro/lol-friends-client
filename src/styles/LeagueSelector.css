@@ -8,24 +8,24 @@
   color: #fff;
 }
 
-.rank-selected {
+.league-selected {
   color: #fff;
   background-color: #4e3ef3cf;
   border-color: #4e3ef3cf;
 }
-.rank-selected:active {
+.league-selected:active {
   color: #fff;
   background-color: #4e3ef3cf;
   border-color: #4e3ef3cf;
 }
 
-.rank-not-selected {
+.league-not-selected {
   color: #4e3ef3cf;
   background-color: #fff;
   border-color: #4e3ef3cf;
 }
 
-.rank-not-selected:hover {
+.league-not-selected:hover {
   background-color: rgb(78, 62, 243, 0.4);
   color: #fff;
 }

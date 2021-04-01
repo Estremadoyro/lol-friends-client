@@ -11,7 +11,7 @@ export const WRPerc = (props) => {
     <>
       <span
         style={
-          wr >= 60
+          wr >= 65
             ? { color: golden }
             : wr >= 50
             ? { color: blue }

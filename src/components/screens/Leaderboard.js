@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSettingsContext } from "../../contexts/SettingsContext";
 import { gLeaderboard } from "../../api/LeaderboardAPI";
 import { Loading } from "../../misc/Loading";
-import { RankSelector } from "../RankSelector";
+import { LeagueSelector } from "../LeagueSelector";
 
 import { WRPie } from "../WRPie";
 import { WRPerc } from "../WRPerc";
@@ -13,7 +13,7 @@ import { Countdown } from "../Countdown";
 import { UpdatedRank } from "../UpdatedRank";
 
 const Leaderboard = () => {
-  const { region, rank } = useSettingsContext();
+  const { region, league } = useSettingsContext();
 
   const [queue, setQueue] = useState("RANKED_SOLO_5x5");
   const [division, setDivision] = useState("I");
@@ -25,7 +25,7 @@ const Leaderboard = () => {
     setLoading(true);
     let u = false;
     try {
-      const fetchPlayers = await gLeaderboard(region, queue, rank, division);
+      const fetchPlayers = await gLeaderboard(region, queue, league, division);
       //nasty flags used to prevent memory leaks, gotta find a better way...
       if (!u) {
         if (fetchPlayers.error) {
@@ -48,12 +48,12 @@ const Leaderboard = () => {
 
   useEffect(() => {
     getPlayers();
-  }, [region, rank]);
+  }, [region, league]);
 
   return (
     <>
       <div className="container text-center" style={{ maxWidth: "720px" }}>
-        <RankSelector loading={loading} />
+        <LeagueSelector loading={loading} />
         <Countdown />
         <div className="table-responsive">
           <table className="table mx-auto w-auto">

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 
-import { selectRegion, selectRank } from "../misc/Variables";
+import { selectRegion, selectLeague } from "../misc/Variables";
 
 export const SettingsContext = React.createContext();
 
@@ -10,13 +10,13 @@ export const useSettingsContext = () => {
 
 export const SettingsContextProvider = (props) => {
   const [region, setRegion] = useState(selectRegion.regions[0].value);
-  const [rank, setRank] = useState(selectRank.ranks[0].value);
+  const [league, setLeague] = useState(selectLeague.leagues[0].value);
 
   const values = {
     region,
-    rank,
+    league,
     setRegion,
-    setRank,
+    setLeague,
   };
 
   return (
