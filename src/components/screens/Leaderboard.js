@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 
 import { useSettingsContext } from "../../contexts/SettingsContext";
 import { gLeaderboard } from "../../api/LeaderboardAPI";
@@ -9,8 +10,10 @@ import { WRPie } from "../WRPie";
 import { WRPerc } from "../WRPerc";
 
 import "../../styles/Leaderboard.css";
+import "../../styles/Pagination.css";
 import { Countdown } from "../Countdown";
 import { UpdatedRank } from "../UpdatedRank";
+import { Pagination } from "../Pagination";
 
 const Leaderboard = () => {
   const { region, league } = useSettingsContext();
@@ -20,6 +23,10 @@ const Leaderboard = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [players, setPlayers] = useState([]);
+
+  const [pageNumber, setPageNumber] = useState(0);
+  const playersPerPage = 25;
+  const pagesVisited = pageNumber * playersPerPage;
 
   const getPlayers = async () => {
     setLoading(true);
@@ -46,6 +53,37 @@ const Leaderboard = () => {
     }
   };
 
+  const displayPlayers = players
+    .slice(pagesVisited, pagesVisited + playersPerPage)
+    .map((player) => {
+      return (
+        <tr key={player.summonerId}>
+          <td className="align-middle" style={{ textAlign: "left" }}>
+            <span
+              className={`badge rank-badge-${
+                player.rank < 4 ? player.rank : "default"
+              } m-2`}
+            >
+              {player.rank}
+            </span>
+            {player.summonerName}
+          </td>
+          <td className="align-middle"> {player.leaguePoints} LP </td>
+          <td className="align-middle">
+            <WRPie wins={player.wins} losses={player.losses} />
+          </td>
+          <td className="align-middle">
+            <WRPerc wins={player.wins} losses={player.losses} />
+          </td>
+          <td className="align-middle">
+            <UpdatedRank
+              rankUpdate={player.rankUpdate}
+              rankOffset={player.rankOffset}
+            />
+          </td>
+        </tr>
+      );
+    });
   useEffect(() => {
     getPlayers();
   }, [region, league]);
@@ -91,47 +129,18 @@ const Leaderboard = () => {
                 </tr>
               ) : null}
 
-              {players && !loading
-                ? players.map((player) => {
-                    console.log(player);
-                    return (
-                      <tr key={player.summonerId}>
-                        <td
-                          className="align-middle"
-                          style={{ textAlign: "left" }}
-                        >
-                          <span
-                            className={`badge rank-badge-${
-                              player.rank < 4 ? player.rank : "default"
-                            } m-2`}
-                          >
-                            {player.rank}
-                          </span>
-                          {player.summonerName}
-                        </td>
-                        <td className="align-middle">
-                          {" "}
-                          {player.leaguePoints} LP{" "}
-                        </td>
-                        <td className="align-middle">
-                          <WRPie wins={player.wins} losses={player.losses} />
-                        </td>
-                        <td className="align-middle">
-                          <WRPerc wins={player.wins} losses={player.losses} />
-                        </td>
-                        <td className="align-middle">
-                          <UpdatedRank
-                            rankUpdate={player.rankUpdate}
-                            rankOffset={player.rankOffset}
-                          />
-                        </td>
-                      </tr>
-                    );
-                  })
-                : null}
+              {players && !loading ? displayPlayers : null}
             </tbody>
           </table>
         </div>
+        {players.length > 0 && !loading ? (
+          <Pagination
+            players={players}
+            displayPlayers={displayPlayers}
+            playersPerPage={playersPerPage}
+            setPageNumber={setPageNumber}
+          />
+        ) : null}
       </div>
     </>
   );
