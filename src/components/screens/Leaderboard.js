@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 
 import { useSettingsContext } from "../../contexts/SettingsContext";
 import { gLeaderboard } from "../../api/LeaderboardAPI";
 import { Loading } from "../../misc/Loading";
+import { LBLoading } from "../LBLoading";
+import Skeleton from "react-loading-skeleton";
 import { LeagueSelector } from "../LeagueSelector";
 
-import { WRPie } from "../WRPie";
+import { WRBar } from "../WRBar";
 import { WRPerc } from "../WRPerc";
 
 import "../../styles/Leaderboard.css";
@@ -70,7 +71,7 @@ const Leaderboard = () => {
           </td>
           <td className="align-middle"> {player.leaguePoints} LP </td>
           <td className="align-middle">
-            <WRPie wins={player.wins} losses={player.losses} />
+            <WRBar wins={player.wins} losses={player.losses} />
           </td>
           <td className="align-middle">
             <WRPerc wins={player.wins} losses={player.losses} />

@@ -5,7 +5,7 @@ import { HorizontalBar } from "react-chartjs-2";
 
 import "../styles/WRPie.css";
 
-export const WRPie = (props) => {
+export const WRBar = (props) => {
   const data = {
     labels: ["Record"],
     datasets: [
