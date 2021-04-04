@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactPaginate from "react-paginate";
+import { useSettingsContext } from "../contexts/SettingsContext";
 
 export const Pagination = ({ players, playersPerPage, setPageNumber }) => {
+  const { region, league } = useSettingsContext();
   const pageCount = Math.ceil(players.length / playersPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+
+  useEffect(() => {
+    setPageNumber(0);
+  }, [region, league]);
   return (
     <>
       <nav className="mt-1">
         <ReactPaginate
           previousLabel={"Back"}
-          // previousClassName={"fas fa-arrow-circle-left"}
           nextLabel={"Next"}
           pageCount={pageCount}
           onPageChange={changePage}

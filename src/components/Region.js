@@ -5,12 +5,17 @@ import { selectRegion } from "../misc/Variables";
 import { useSettingsContext } from "../contexts/SettingsContext";
 
 import "../styles/Region.css";
+import "../scripts/Region.js";
 
 const Region = () => {
   const { region, setRegion } = useSettingsContext();
   return (
     <>
-      <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
+      <ul
+        className="nav navbar-nav justify-content-end"
+        id="region-selector"
+        style={{ position: "relative" }}
+      >
         <li className="nav-item">
           <select
             className="region-button btn w-100 btn-lg"

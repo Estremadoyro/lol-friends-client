@@ -7,6 +7,7 @@ td:first-child {
 }
 th {
   color: #5e60ce;
+  width: 25% !important;
 }
 .rank-badge-1 {
   background-color: #ffc107;

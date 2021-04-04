@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 
 import { useSettingsContext } from "../../contexts/SettingsContext";
 import { gLeaderboard } from "../../api/LeaderboardAPI";
@@ -15,6 +15,7 @@ import "../../styles/Pagination.css";
 import { Countdown } from "../Countdown";
 import { UpdatedRank } from "../UpdatedRank";
 import { Pagination } from "../Pagination";
+import { TestComponent } from "../TestComponent";
 
 const Leaderboard = () => {
   const { region, league } = useSettingsContext();
@@ -69,7 +70,7 @@ const Leaderboard = () => {
             </span>
             {player.summonerName}
           </td>
-          <td className="align-middle"> {player.leaguePoints} LP </td>
+          <td className="align-middle">{player.leaguePoints}</td>
           <td className="align-middle">
             <WRBar wins={player.wins} losses={player.losses} />
           </td>
@@ -98,7 +99,7 @@ const Leaderboard = () => {
           <table className="table mx-auto w-auto">
             <thead>
               <tr>
-                <th className="header" scope="col">
+                <th className="header" scope="col" style={{ width: "100px" }}>
                   Player
                 </th>
                 <th className="header" scope="col">
@@ -115,22 +116,12 @@ const Leaderboard = () => {
                 </th>
               </tr>
             </thead>
-
             <tbody>
               {loading ? (
-                <tr>
-                  <td
-                    className="align-middle"
-                    colSpan="5"
-                    style={{ border: "none" }}
-                  >
-                    {" "}
-                    <Loading />{" "}
-                  </td>
-                </tr>
-              ) : null}
-
-              {players && !loading ? displayPlayers : null}
+                <TestComponent players={players.slice(0, playersPerPage)} />
+              ) : (
+                displayPlayers
+              )}
             </tbody>
           </table>
         </div>
