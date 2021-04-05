@@ -6,3 +6,7 @@ $(function () {
     $(".btn:first-child").val($(this).text());
   });
 });
+
+// var fullNav = document.getElementById("full-navbar");
+var regionNav = document.getElementById("region-navbar");
+

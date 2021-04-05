@@ -9,3 +9,14 @@
 .select.option.is-selected {
   display: none;
 }
+
+@media screen and (max-width: 767px) {
+  .region-navbar {
+    width: 100% !important; 
+  }
+}
+@media screen and (min-width: 769px) {
+  .region-navbar {
+    width: inherit !important; 
+  }
+}

@@ -7,8 +7,8 @@ import "../scripts/Navbar.js";
 
 const Navbar = () => {
   return (
-    <>
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg py-0">
+    <div id="fullNavbar">
+      <nav className="navbar navbar-dark bg-dark navbar-expand-md py-0">
         <Link to="/" className="navbar-brand d-flex mx-1">
           LoL Friends
         </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
         </div>
         <Region />
       </nav>
-    </>
+    </div>
   );
 };
 

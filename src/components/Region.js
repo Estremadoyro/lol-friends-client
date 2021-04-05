@@ -10,7 +10,7 @@ import "../scripts/Region.js";
 const Region = () => {
   const { region, setRegion } = useSettingsContext();
   return (
-    <>
+    <div className="region-navbar">
       <ul
         className="nav navbar-nav justify-content-end"
         id="region-selector"
@@ -40,7 +40,7 @@ const Region = () => {
           </select>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

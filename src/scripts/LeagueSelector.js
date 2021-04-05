@@ -10,3 +10,11 @@ $(function () {
       .addClass("rank-not-selected ");
   });
 });
+
+$(window).on("resize", function () {
+  if ($(window).width() < 370) {
+    $(".btn-group").addClass("btn-group-sm");
+  } else {
+    $(".btn-group").removeClass("btn-group-sm");
+  }
+});

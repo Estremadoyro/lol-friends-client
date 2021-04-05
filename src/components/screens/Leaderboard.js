@@ -20,8 +20,6 @@ import { TestComponent } from "../TestComponent";
 const Leaderboard = () => {
   const { region, league } = useSettingsContext();
 
-  const [queue, setQueue] = useState("RANKED_SOLO_5x5");
-  const [division, setDivision] = useState("I");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [players, setPlayers] = useState([]);
@@ -34,7 +32,7 @@ const Leaderboard = () => {
     setLoading(true);
     let u = false;
     try {
-      const fetchPlayers = await gLeaderboard(region, queue, league, division);
+      const fetchPlayers = await gLeaderboard(region, league);
       //nasty flags used to prevent memory leaks, gotta find a better way...
       if (!u) {
         if (fetchPlayers.error) {

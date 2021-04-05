@@ -36,12 +36,13 @@ i .fas {
   box-shadow: none;
 }
 
-@media screen and (max-width: 1025px) and (min-width: 992px) {
+@media screen and (max-width: 1025px) and (min-width: 768px) {
   .nav-item-name {
     display: none;
   }
 }
-/* @media (min-width: 768px) and (max-width: 850px) { */
+
+/* @media screen and (max-width: 850px) { */
 /*   .collapse { */
 /*     display: none !important; */
 /*   } */
