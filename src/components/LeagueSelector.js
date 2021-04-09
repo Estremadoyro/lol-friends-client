@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
-
 import { useSettingsContext } from "../contexts/SettingsContext";
-
 import { selectLeague } from "../misc/Variables";
 
 import "../styles/LeagueSelector.css";
@@ -18,11 +16,7 @@ export const LeagueSelector = (props) => {
             return (
               <Fragment key={league_s.value}>
                 <button
-                  className={`btn ${
-                    league_s.value == league
-                      ? "league-selected"
-                      : "league-not-selected"
-                  }`}
+                  className={`btn ${league_s.value == league ? "league-selected" : "league-not-selected"}`}
                   value={league_s.value}
                   disabled={props.loading}
                   onClick={(e) => {

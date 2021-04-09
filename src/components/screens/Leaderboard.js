@@ -2,10 +2,8 @@ import React, { useEffect, useState, Fragment } from "react";
 
 import { useSettingsContext } from "../../contexts/SettingsContext";
 import { gLeaderboard } from "../../api/LeaderboardAPI";
-import { Loading } from "../../misc/Loading";
-import { LBLoading } from "../LBLoading";
-import Skeleton from "react-loading-skeleton";
 import { LeagueSelector } from "../LeagueSelector";
+import {LeaderboardSkeleton} from "../LeaderboardSkeleton"
 
 import { WRBar } from "../WRBar";
 import { WRPerc } from "../WRPerc";
@@ -15,7 +13,6 @@ import "../../styles/Pagination.css";
 import { Countdown } from "../Countdown";
 import { UpdatedRank } from "../UpdatedRank";
 import { Pagination } from "../Pagination";
-import { TestComponent } from "../TestComponent";
 
 const Leaderboard = () => {
   const { region, league } = useSettingsContext();
@@ -116,7 +113,7 @@ const Leaderboard = () => {
             </thead>
             <tbody>
               {loading ? (
-                <TestComponent players={players.slice(0, playersPerPage)} />
+                <LeaderboardSkeleton players={players.slice(0, playersPerPage)} />
               ) : (
                 displayPlayers
               )}

@@ -1,7 +1,7 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 
-export const TestComponent = () => {
+export const LeaderboardSkeleton = () => {
   return Array.from(Array(25)).map((_, index) => (
     <tr key={index}>
       <td className="align-middle" style={{ textAlign: "left" }}>
