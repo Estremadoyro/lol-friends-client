@@ -3,7 +3,6 @@ export const resolver = async (promise) => {
     data: null,
     error: null,
   };
-
   try {
     resolved.data = await promise;
   } catch (err) {
