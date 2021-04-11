@@ -1,9 +1,13 @@
-import { SEARCH_SUMMONER, SEARCH_SUMMONER_ERROR, SEARCH_SUMMONER_SUCCESS } from "../action-types/types";
+import {
+  SEARCH_SUMMONER,
+  SEARCH_SUMMONER_ERROR,
+  SEARCH_SUMMONER_SUCCESS,
+} from "../action-types/types";
 
 const initialState = {
   error: null,
   loading: false,
-  data: [],
+  player: null,
 };
 
 export const searchSummonerReducer = (state = initialState, action) => {
@@ -11,11 +15,20 @@ export const searchSummonerReducer = (state = initialState, action) => {
 
   switch (type) {
     case SEARCH_SUMMONER:
-      return { error: null, loading: true, data: [] };
+      return {
+        ...state,
+        ...payload,
+        loading: true,
+      };
     case SEARCH_SUMMONER_SUCCESS:
-      return { error: null, loading: false, data: payload };
+      return {
+        ...state,
+        error: null,
+        loading: false,
+        player: payload,
+      };
     case SEARCH_SUMMONER_ERROR:
-      return { error: payload, loading: false, data: [] };
+      return { ...state, error: payload, loading: false, player: null };
     default:
       return state;
   }

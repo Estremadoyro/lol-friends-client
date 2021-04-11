@@ -3,7 +3,7 @@ import React, { useEffect, useState, Fragment } from "react";
 import { useSettingsContext } from "../../contexts/SettingsContext";
 import { gLeaderboard } from "../../api/LeaderboardAPI";
 import { LeagueSelector } from "../LeagueSelector";
-import { LeaderboardSkeleton } from "../LeaderboardSkeleton";
+import { LeaderboardSkeleton } from "../skeletons/LeaderboardSkeleton";
 
 import { WRBar } from "../WRBar";
 import { WRPerc } from "../WRPerc";
@@ -50,26 +50,37 @@ const Leaderboard = () => {
     }
   };
 
-  const displayPlayers = players.slice(pagesVisited, pagesVisited + playersPerPage).map((player) => {
-    return (
-      <tr key={player.summonerId}>
-        <td className="align-middle" style={{ textAlign: "left" }}>
-          <span className={`badge rank-badge-${player.rank < 4 ? player.rank : "default"} m-2`}>{player.rank}</span>
-          {player.summonerName}
-        </td>
-        <td className="align-middle">{player.leaguePoints}</td>
-        <td className="align-middle">
-          <WRBar wins={player.wins} losses={player.losses} />
-        </td>
-        <td className="align-middle">
-          <WRPerc wins={player.wins} losses={player.losses} />
-        </td>
-        <td className="align-middle">
-          <UpdatedRank rankUpdate={player.rankUpdate} rankOffset={player.rankOffset} />
-        </td>
-      </tr>
-    );
-  });
+  const displayPlayers = players
+    .slice(pagesVisited, pagesVisited + playersPerPage)
+    .map((player) => {
+      return (
+        <tr key={player.summonerId}>
+          <td className="align-middle" style={{ textAlign: "left" }}>
+            <span
+              className={`badge rank-badge-${
+                player.rank < 4 ? player.rank : "default"
+              } m-2`}
+            >
+              {player.rank}
+            </span>
+            {player.summonerName}
+          </td>
+          <td className="align-middle">{player.leaguePoints}</td>
+          <td className="align-middle">
+            <WRBar wins={player.wins} losses={player.losses} />
+          </td>
+          <td className="align-middle">
+            <WRPerc wins={player.wins} losses={player.losses} />
+          </td>
+          <td className="align-middle">
+            <UpdatedRank
+              rankUpdate={player.rankUpdate}
+              rankOffset={player.rankOffset}
+            />
+          </td>
+        </tr>
+      );
+    });
   useEffect(() => {
     getPlayers();
   }, [region, league]);
@@ -101,7 +112,13 @@ const Leaderboard = () => {
               </tr>
             </thead>
             <tbody>
-              {loading ? <LeaderboardSkeleton players={players.slice(0, playersPerPage)} /> : displayPlayers}
+              {loading ? (
+                <LeaderboardSkeleton
+                  players={players.slice(0, playersPerPage)}
+                />
+              ) : (
+                displayPlayers
+              )}
             </tbody>
           </table>
         </div>

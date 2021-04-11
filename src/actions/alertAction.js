@@ -1,14 +1,14 @@
-import { SET_SEARCH_ALERT, REMOVE_SEARCH_ALERT } from "../action-types/types";
+import { SET_ALERT, REMOVE_ALERT } from "../action-types/types";
 
-export const setAlert = (alert) => (dispatch) => {
+export const setAlertAction = (alert) => (dispatch) => {
   dispatch({
-    type: SET_SEARCH_ALERT,
+    type: SET_ALERT,
     payload: alert,
   });
 };
 
-export const removeAlert = () => (dispatch) => {
+export const removeAlertAction = () => (dispatch) => {
   dispatch({
-    type: REMOVE_SEARCH_ALERT,
+    type: REMOVE_ALERT,
   });
 };
