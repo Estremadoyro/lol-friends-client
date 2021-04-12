@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import PropTypes from "prop-types";
 import { Footer } from "../Footer";
 import SearchSummonerBar from "../SearchSummonerBar";
 import { HomeLogo } from "../HomeLogo";
@@ -17,19 +17,27 @@ const Home = ({ player, loading, error }) => {
       >
         <HomeLogo />
         <SearchSummonerBar />
-        {error && <h3>{error}</h3>}
+        {error && (
+          <div className="alert alert-danger my-2" role="alert">
+            {error}
+          </div>
+        )}
         {loading && <SummonerPreviewSkeleton />}
         {!loading && player ? (
           <SummonerPreviewCard player={player.player} />
         ) : null}
-        <SummonerPreviewSkeleton />
+        {/* <SummonerPreviewSkeleton /> */}
         <HomeNews />
       </div>
       <Footer />
     </>
   );
 };
-
+Home.propTypes = {
+  player: PropTypes.object,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+};
 const mapStateToProps = (state) => ({
   player: state.searchSummonerReducer.player,
   loading: state.searchSummonerReducer.loading,

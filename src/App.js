@@ -7,7 +7,6 @@ import Champions from "./components/screens/Champions";
 import Reports from "./components/screens/Reports";
 import News from "./components/screens/News";
 
-// import { SettingsContextProvider } from "./contexts/SettingsContext";
 import Navbar from "./components/Navbar";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -16,14 +15,14 @@ import { loadRegionAction } from "./actions/regionAction";
 function App() {
   useEffect(() => {
     store.dispatch(loadRegionAction());
-  });
+  }, []);
   return (
     <Provider store={store}>
       <Fragment>
         <BrowserRouter>
           <Navbar />
           <Route path="/" component={Home} exact />
-          {/* <Route path="/leaderboard" component={Leaderboard} exact /> */}
+          <Route path="/leaderboard" component={Leaderboard} exact />
           <Route path="/champions" component={Champions} exact />
           <Route path="/reports" component={Reports} exact />
           <Route path="/news" component={News} exact />

@@ -1,4 +1,8 @@
-import { LOAD_LEADERBOARD, LOAD_LEADERBOARD_SUCCESS, LOAD_LEADERBOARD_ERROR } from "../action-types/types";
+import {
+  LOAD_LEADERBOARD,
+  LOAD_LEADERBOARD_SUCCESS,
+  LOAD_LEADERBOARD_ERROR,
+} from "../action-types/types";
 
 const initialState = {
   error: null,
@@ -11,11 +15,16 @@ export const leaderboardReducer = (state = initialState, action) => {
 
   switch (type) {
     case LOAD_LEADERBOARD:
-      return { error: null, loading: true, players: [] };
+      return { ...state, ...payload, error: null, loading: true, players: [] };
     case LOAD_LEADERBOARD_SUCCESS:
-      return { error: null, loading: false, players: payload };
+      return {
+        ...state,
+        error: null,
+        loading: false,
+        players: payload,
+      };
     case LOAD_LEADERBOARD_ERROR:
-      return { error: payload, loading: false, players: [] };
+      return { ...state, error: payload, loading: false, players: [] };
     default:
       return state;
   }

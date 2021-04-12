@@ -4,7 +4,7 @@ import {
   SEARCH_SUMMONER_SUCCESS,
   SEARCH_SUMMONER_ERROR,
 } from "../action-types/types";
-import { setAlertAction } from "./alertAction";
+import { setAlertAction, removeAlertAction } from "./alertAction";
 
 export const searchSummonerAction = (summonerName, region) => async (
   dispatch
@@ -13,6 +13,7 @@ export const searchSummonerAction = (summonerName, region) => async (
   dispatch({
     type: SEARCH_SUMMONER,
   });
+  dispatch(removeAlertAction());
   try {
     const { data } = await axios.post(
       `/api/v1.1/summoner/${region}/${summonerName}`

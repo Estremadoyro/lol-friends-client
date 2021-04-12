@@ -11,7 +11,7 @@ export const alertReducer = (state = initialState, action) => {
     case SET_ALERT:
       return { alert: payload };
     case REMOVE_ALERT:
-      return state;
+      return { alert: "" };
     default:
       return state;
   }

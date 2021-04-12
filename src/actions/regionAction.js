@@ -10,10 +10,6 @@ import { setAlertAction } from "./alertAction";
 
 export const loadRegionAction = () => (dispatch) => {
   const localRegion = localStorage.region;
-  console.log(`Local region ${localRegion}`);
-  console.log(
-    `Regions list: ${selectRegion.regions.map((region) => region.value)}`
-  );
   if (
     localRegion &&
     selectRegion.regions.map((region) => region.value).includes(localRegion)

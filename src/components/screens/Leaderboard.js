@@ -1,53 +1,38 @@
 import React, { useEffect, useState, Fragment } from "react";
 
-import { useSettingsContext } from "../../contexts/SettingsContext";
-import { gLeaderboard } from "../../api/LeaderboardAPI";
-import { LeagueSelector } from "../LeagueSelector";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
+import { loadLeaderboardAction } from "../../actions/leaderboardAction";
+import { loadLeagueAction } from "../../actions/leagueAction";
+
+import LeagueSelector from "../LeagueSelector";
 import { LeaderboardSkeleton } from "../skeletons/LeaderboardSkeleton";
 
 import { WRBar } from "../WRBar";
 import { WRPerc } from "../WRPerc";
 
-import "../../styles/Leaderboard.css";
-import "../../styles/Pagination.css";
 import { Countdown } from "../Countdown";
 import { UpdatedRank } from "../UpdatedRank";
-import { Pagination } from "../Pagination";
+import Pagination from "../Pagination";
 
-const Leaderboard = () => {
-  const { region, league } = useSettingsContext();
+import "../../styles/Leaderboard.css";
+import "../../styles/Pagination.css";
 
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [players, setPlayers] = useState([]);
-
+const Leaderboard = ({
+  players,
+  league,
+  region,
+  loading,
+  loadLeaderboardAction,
+}) => {
+  console.log(league);
   const [pageNumber, setPageNumber] = useState(0);
   const playersPerPage = 25;
   const pagesVisited = pageNumber * playersPerPage;
 
   const getPlayers = async () => {
-    setLoading(true);
-    let u = false;
-    try {
-      const fetchPlayers = await gLeaderboard(region, league);
-      //nasty flags used to prevent memory leaks, gotta find a better way...
-      if (!u) {
-        if (fetchPlayers.error) {
-          setError(fetchPlayers.error);
-
-          console.log(fetchPlayers.error);
-        } else {
-          console.log(fetchPlayers.data.players);
-          setPlayers(fetchPlayers.data.players);
-        }
-      }
-      setLoading(false);
-      return () => {
-        u = true;
-      };
-    } catch (err) {
-      console.log(err);
-    }
+    loadLeaderboardAction(region, league);
   };
 
   const displayPlayers = players
@@ -88,7 +73,7 @@ const Leaderboard = () => {
   return (
     <>
       <div className="container text-center" style={{ maxWidth: "720px" }}>
-        <LeagueSelector loading={loading} />
+        <LeagueSelector />
         <Countdown />
         <div className="table-responsive">
           <table className="table mx-auto w-auto">
@@ -134,4 +119,22 @@ const Leaderboard = () => {
     </>
   );
 };
-export default Leaderboard;
+
+Leaderboard.propTypes = {
+  loadLeaderboardAction: PropTypes.func.isRequired,
+  league: PropTypes.string,
+  players: PropTypes.array.isRequired,
+  region: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  league: state.leagueReducer.league,
+  players: state.leaderboardReducer.players,
+  region: state.regionReducer.region,
+  loading: state.leaderboardReducer.loading,
+});
+
+export default connect(mapStateToProps, {
+  loadLeaderboardAction,
+})(Leaderboard);
