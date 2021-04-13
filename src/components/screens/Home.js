@@ -7,6 +7,7 @@ import { HomeLogo } from "../HomeLogo";
 import { HomeNews } from "../HomeNews";
 import { SummonerPreviewCard } from "../SummonerPreviewCard";
 import { SummonerPreviewSkeleton } from "../skeletons/SummonerPreviewSkeleton";
+import Emoji from "../../misc/Emoji";
 
 const Home = ({ player, loading, error }) => {
   return (
@@ -19,7 +20,7 @@ const Home = ({ player, loading, error }) => {
         <SearchSummonerBar />
         {error && (
           <div className="alert alert-danger my-2" role="alert">
-            {error}
+            {error} <Emoji symbol="😥" label="sheep" />
           </div>
         )}
         {loading && <SummonerPreviewSkeleton />}

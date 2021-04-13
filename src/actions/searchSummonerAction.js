@@ -23,7 +23,6 @@ export const searchSummonerAction = (summonerName, region) => async (
       payload: data,
     });
   } catch (err) {
-    console.log(err.response.data.error);
     dispatch(setAlertAction(err.response.data.error));
     dispatch({
       type: SEARCH_SUMMONER_ERROR,

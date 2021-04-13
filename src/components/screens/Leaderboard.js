@@ -4,15 +4,15 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { loadLeaderboardAction } from "../../actions/leaderboardAction";
-import { loadLeagueAction } from "../../actions/leagueAction";
 
 import LeagueSelector from "../LeagueSelector";
 import { LeaderboardSkeleton } from "../skeletons/LeaderboardSkeleton";
+import { LeaderboardInfoSkeleton } from "../skeletons/LeaderboardInfoSkeleton";
 
 import { WRBar } from "../WRBar";
 import { WRPerc } from "../WRPerc";
 
-import { Countdown } from "../Countdown";
+import { LeaderboardInfo } from "../LeaderboardInfo";
 import { UpdatedRank } from "../UpdatedRank";
 import Pagination from "../Pagination";
 
@@ -74,7 +74,13 @@ const Leaderboard = ({
     <>
       <div className="container text-center" style={{ maxWidth: "720px" }}>
         <LeagueSelector />
-        <Countdown />
+        {loading && <LeaderboardInfoSkeleton />}
+        {players.length > 0 && (
+          <LeaderboardInfo
+            playerCount={players.length}
+            updateTime={players[0].updateTime}
+          />
+        )}
         <div className="table-responsive">
           <table className="table mx-auto w-auto">
             <thead>

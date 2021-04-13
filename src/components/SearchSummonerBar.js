@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -8,10 +8,19 @@ import "../styles/SearchSummonerBar.css";
 
 const SearchSummonerBar = ({ searchSummonerAction, region, loading }) => {
   const [summoner, setSummoner] = useState("");
+  const firstUpdate = useRef(true);
   const searchSummoner = async (e) => {
     e.preventDefault();
-    searchSummonerAction(summoner, region);
+    if (summoner) searchSummonerAction(summoner, region);
+    return;
   };
+  useEffect(() => {
+    if (firstUpdate.current || !summoner) {
+      firstUpdate.current = false;
+      return;
+    }
+    searchSummonerAction(summoner, region);
+  }, [region]);
   return (
     <>
       <form className="form-group" onSubmit={searchSummoner} autoComplete="off">
@@ -51,6 +60,6 @@ const mapStateToProps = (state) => ({
   loading: state.searchSummonerReducer.loading,
 });
 
-export default connect(mapStateToProps, { searchSummonerAction })(
-  SearchSummonerBar
-);
+export default connect(mapStateToProps, {
+  searchSummonerAction,
+})(SearchSummonerBar);
