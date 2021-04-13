@@ -12,6 +12,7 @@ See also: https://github.com/Estremadoyro/lol-friends-server
 -   Custom leaderboard with friends
 -   Champion statistics
 -   This or That alike section
+-   News section?
 
 ## Working on
 
@@ -20,17 +21,19 @@ See also: https://github.com/Estremadoyro/lol-friends-server
 -   Search lol players across all servers
 -   News section redirected to surrender20.com
 
-![alt text](https://i.ibb.co/c11NTvw/unknown.png)
+![alt text](https://i.ibb.co/dbY7t9G/lolf1.png)
 
 ## Leaderboard
 
 -   Leaderboard table which updates every 30 for Master league and 24hrs for Grandmaster+
 -   Shows ladder updates, went up, down, stay or new.
+-   Loads top 250 players
+-   Update date
 -   Winrate colored
     -   Gold >= 65%
     -   Blue >= 50%
     -   Red < 50%
-        ![alt text](https://i.ibb.co/Y74NRZ8/Screenshot-from-2021-03-27-23-28-24.png)
+        ![alt text](https://i.ibb.co/MkngQpT/lolf2.png)
 
 ## Available Scripts
 
