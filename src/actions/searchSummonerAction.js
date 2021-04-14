@@ -9,7 +9,7 @@ import { setAlertAction, removeAlertAction } from "./alertAction";
 export const searchSummonerAction = (summonerName, region) => async (
   dispatch
 ) => {
-  console.log(summonerName);
+  // console.log(summonerName);
   dispatch({
     type: SEARCH_SUMMONER,
   });

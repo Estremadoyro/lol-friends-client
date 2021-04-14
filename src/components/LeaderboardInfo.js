@@ -1,11 +1,17 @@
 import React from "react";
-import "../styles/LeaderboardInfo.css";
+// import DayJS from "react-dayjs";
 
-export const LeaderboardInfo = ({ playerCount }) => {
+import "../styles/LeaderboardInfo.css";
+import { dateFromNow } from "../scripts/LeaderboardInfo.js";
+
+export const LeaderboardInfo = ({ playerCount, updateTime }) => {
+  const timeFromNow = dateFromNow(updateTime);
   return (
     <div className="container mx-auto leaderboard-info-container">
       <span className="badge leaderboard-info-pill rounded-pill">
-        <i className="fas fa-calendar-alt me-2"></i>21-May-2021
+        <i className="fas fa-calendar-alt me-2"></i>
+        {/* <DayJS format="MMM-DD HH:mm UTC Z">{updateTime}</DayJS> */}
+        {timeFromNow}
       </span>
       <span className="badge leaderboard-info-pill rounded-pill mx-2">
         <i className="fas fa-user-friends me-2"></i>

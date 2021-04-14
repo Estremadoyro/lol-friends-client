@@ -26,7 +26,8 @@ const Leaderboard = ({
   loading,
   loadLeaderboardAction,
 }) => {
-  console.log(league);
+  // console.log(process.env.NODE_ENV);
+  // console.log(league);
   const [pageNumber, setPageNumber] = useState(0);
   const playersPerPage = 25;
   const pagesVisited = pageNumber * playersPerPage;

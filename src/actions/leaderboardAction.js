@@ -7,7 +7,7 @@ import {
 } from "../action-types/types";
 
 export const loadLeaderboardAction = (region, league) => async (dispatch) => {
-  console.log(`${region} || ${league}`);
+  // console.log(`${region} || ${league}`);
   dispatch({
     type: LOAD_LEADERBOARD,
   });
@@ -15,13 +15,12 @@ export const loadLeaderboardAction = (region, league) => async (dispatch) => {
     const { data } = await axios.get(
       `/api/v1.1/leaderboard/${region}/${league}`
     );
-    console.log(data);
     dispatch({
       type: LOAD_LEADERBOARD_SUCCESS,
       payload: data.players,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     dispatch({
       type: LOAD_LEADERBOARD_ERROR,
       payload: err.response.data.error,

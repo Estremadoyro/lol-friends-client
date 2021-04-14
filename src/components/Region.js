@@ -22,7 +22,7 @@ const Region = ({ region, switchRegionAction }) => {
             aria-expanded="false"
             value={region}
             onChange={(e) => {
-              console.log(e.target.value);
+              // console.log(e.target.value);
               switchRegionAction(e.target.value);
             }}
           >

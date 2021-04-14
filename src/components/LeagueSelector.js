@@ -25,7 +25,7 @@ const LeagueSelector = ({ league, loading, switchLeagueAction }) => {
                   value={league_s.value}
                   disabled={loading}
                   onClick={(e) => {
-                    console.log(e.target.value);
+                    // console.log(e.target.value);
                     switchLeagueAction(e.target.value);
                   }}
                 >
