@@ -12,15 +12,14 @@ import { apiEnvironment } from "../api/apiEnvironment";
 export const searchSummonerAction = (summonerName, region) => async (
   dispatch
 ) => {
+  const parameters = `${apiEnvironment()}/api/v1.1/summoner/${region}/${region}`;
   // console.log(summonerName);
   dispatch({
     type: SEARCH_SUMMONER,
   });
   dispatch(removeAlertAction());
   try {
-    const { data } = await axios.post(
-      `${apiEnvironment}/api/v1.1/summoner/${region}/${summonerName}`
-    );
+    const { data } = await axios.post(parameters);
     dispatch({
       type: SEARCH_SUMMONER_SUCCESS,
       payload: data,
