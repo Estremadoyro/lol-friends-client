@@ -12,7 +12,7 @@ import { apiEnvironment } from "../api/apiEnvironment";
 export const searchSummonerAction = (summonerName, region) => async (
   dispatch
 ) => {
-  const parameters = `${apiEnvironment()}/api/v1.1/summoner/${region}/${region}`;
+  const parameters = `${apiEnvironment()}/api/v1.1/summoner/${region}/${summonerName}`;
   // console.log(summonerName);
   dispatch({
     type: SEARCH_SUMMONER,
