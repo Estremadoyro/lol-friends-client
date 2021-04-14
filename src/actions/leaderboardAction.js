@@ -6,6 +6,8 @@ import {
   LOAD_LEADERBOARD_SUCCESS,
 } from "../action-types/types";
 
+import { apiEnvironment } from "../api/apiEnvironment";
+
 export const loadLeaderboardAction = (region, league) => async (dispatch) => {
   // console.log(`${region} || ${league}`);
   dispatch({
@@ -13,7 +15,7 @@ export const loadLeaderboardAction = (region, league) => async (dispatch) => {
   });
   try {
     const { data } = await axios.get(
-      `/api/v1.1/leaderboard/${region}/${league}`
+      `${apiEnvironment}/api/v1.1/leaderboard/${region}/${league}`
     );
     dispatch({
       type: LOAD_LEADERBOARD_SUCCESS,
