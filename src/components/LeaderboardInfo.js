@@ -5,7 +5,9 @@ import "../styles/LeaderboardInfo.css";
 import { dateFromNow } from "../scripts/LeaderboardInfo.js";
 
 export const LeaderboardInfo = ({ playerCount, updateTime }) => {
+  // console.log(updateTime);
   const timeFromNow = dateFromNow(updateTime);
+  // console.log(timeFromNow);
   return (
     <div className="container mx-auto leaderboard-info-container">
       <span className="badge leaderboard-info-pill rounded-pill">
