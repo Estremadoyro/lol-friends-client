@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
-import ReactPaginate from "react-paginate";
-import { useSettingsContext } from "../contexts/SettingsContext";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-export const Pagination = ({ players, playersPerPage, setPageNumber }) => {
-  const { region, league } = useSettingsContext();
+import ReactPaginate from "react-paginate";
+
+const Pagination = ({
+  players,
+  playersPerPage,
+  setPageNumber,
+  region,
+  league,
+}) => {
   const pageCount = Math.ceil(players.length / playersPerPage);
 
   const changePage = ({ selected }) => {
@@ -33,3 +40,15 @@ export const Pagination = ({ players, playersPerPage, setPageNumber }) => {
     </>
   );
 };
+
+Pagination.propTypes = {
+  region: PropTypes.string.isRequired,
+  league: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  region: state.regionReducer.region,
+  league: state.leagueReducer.league,
+});
+
+export default connect(mapStateToProps)(Pagination);

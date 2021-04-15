@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Region from "../components/Region";
 
 import "../styles/Navbar.css";
@@ -25,35 +25,56 @@ const Navbar = () => {
         </button>
         <div className="navbar-collapse collapse" id="navbarText">
           <ul className="navbar-nav w-100 justify-content-center">
-            <li className="nav-item mx-3 active">
-              <Link className="nav-link" to="/">
+            <li className="nav-item mx-3 ">
+              <NavLink
+                exact
+                className="nav-link"
+                activeStyle={{ color: "#ffffff" }}
+                to="/"
+              >
                 <i className="fas fa-search mx-1"></i>
                 <span className="nav-item-name">Summoner </span>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item mx-3">
-              <Link className="nav-link" to="/leaderboard">
+              <NavLink
+                className="nav-link"
+                to="/leaderboard"
+                activeStyle={{ color: "#ffffff" }}
+              >
                 <i className="fas fa-trophy mx-1"></i>
                 <span className="nav-item-name">Leaderboard </span>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item mx-3">
-              <Link className="nav-link" to="/champions">
+              <NavLink
+                className="nav-link"
+                to="/champions"
+                activeStyle={{ color: "#ffffff" }}
+              >
                 <i className="fas fa-dragon mx-1"></i>
                 <span className="nav-item-name">Champions </span>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item mx-3">
-              <Link className="nav-link" to="/reports">
+              <NavLink
+                className="nav-link"
+                to="/reports"
+                activeStyle={{ color: "#ffffff" }}
+              >
                 <i className="fas fa-flag mx-1"></i>
                 <span className="nav-item-name">Reports </span>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item ms-3 me-4">
-              <Link className="nav-link" to="/news">
+              <NavLink
+                className="nav-link"
+                to="/news"
+                activeStyle={{ color: "#ffffff" }}
+              >
                 <i className="fas fa-newspaper mx-1"></i>
                 <span className="nav-item-name">News </span>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

@@ -1,11 +1,10 @@
 import React from "react";
-import { TestChart } from "../TestChart";
+import { ComingSoon } from "../../misc/ComingSoon";
 
 const Champions = () => {
   return (
     <>
-      Champions owo
-      <TestChart />
+      <ComingSoon />
     </>
   );
 };

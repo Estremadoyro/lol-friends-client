@@ -4,10 +4,16 @@ td:first-child {
   position: sticky;
   left: 0px;
   background: #fff;
+  white-space: nowrap;
+  width: 1%;
 }
 th {
   color: #5e60ce;
   width: 25% !important;
+}
+
+.leaderboard-summoner-name {
+  vertical-align: middle;
 }
 .rank-badge-1 {
   background-color: #ffc107;
@@ -24,14 +30,18 @@ th {
 }
 
 .rank-up {
-  color: #81cef6;
+  /* color: #81cef6; */
+  background-color: #81cef6;
 }
 .rank-down {
-  color: #dc3545;
+  /* color: #dc3545; */
+  background-color: #fb0f25ad;
 }
 .rank-same {
-  color: #6c757d;
+  /* color: #6c757d; */
+  background-color: #6c757d;
 }
 .rank-new {
-  color: #376efd;
+  /* background-color:#928afc; */
+  background-color: #928afc;
 }

@@ -50,7 +50,7 @@ export const HomeNews = () => {
                   target="_blank"
                 >
                   <img
-                    className="img-fluid"
+                    className="card-img-top"
                     src="https://1.bp.blogspot.com/-NQ673uLWVSo/YGTR-8I9j-I/AAAAAAAB30w/8K52z1-EQA4ftmwg_9wvG2vrBeOtPc7cACLcBGAsYHQ/w640-h150/fdagfgafgasdfg.jpg"
                     alt="Card image cap"
                   />
@@ -120,7 +120,7 @@ export const HomeNews = () => {
                   target="_blank"
                 >
                   <img
-                    className="img-fluid"
+                    className="card-img-top"
                     src="https://1.bp.blogspot.com/-7qqEqkhCC5M/YGNPJZRFJkI/AAAAAAAB3i4/E2BX_h-RBR0_mab9J4RFoxivI9ZRR-mkQCLcBGAsYHQ/w640-h208/dktyjtruadtfy.jpg"
                     alt="Card image cap"
                   />

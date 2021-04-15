@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
+
+.leaderboard-info-container .leaderboard-info-pill {
+  font-size: 0.8rem;
+  font-family: "Asap", "Roboto";
+  background-color: #928afc !important;
+}
+
+.leaderboard-info-container .leaderboard-info-pill-skeleton {
+  background-color: #928afc !important;
+}

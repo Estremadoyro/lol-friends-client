@@ -1,14 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { selectRegion } from "../misc/Variables";
 
-import { useSettingsContext } from "../contexts/SettingsContext";
-
+import { switchRegionAction } from "../actions/regionAction";
 import "../styles/Region.css";
 import "../scripts/Region.js";
 
-const Region = () => {
-  const { region, setRegion } = useSettingsContext();
+const Region = ({ region, switchRegionAction }) => {
   return (
     <div className="region-navbar">
       <ul
@@ -20,10 +20,10 @@ const Region = () => {
           <select
             className="region-button btn w-100 btn-lg"
             aria-expanded="false"
-            value={region.name}
+            value={region}
             onChange={(e) => {
-              console.log(e.target.value);
-              setRegion(e.target.value);
+              // console.log(e.target.value);
+              switchRegionAction(e.target.value);
             }}
           >
             {selectRegion.regions.map((region) => {
@@ -44,4 +44,15 @@ const Region = () => {
   );
 };
 
-export default Region;
+Region.propTypes = {
+  region: PropTypes.string.isRequired,
+  switchRegionAction: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  region: state.regionReducer.region,
+});
+
+export default connect(mapStateToProps, {
+  switchRegionAction,
+})(Region);

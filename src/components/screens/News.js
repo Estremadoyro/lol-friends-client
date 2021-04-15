@@ -1,7 +1,13 @@
 import React from "react";
+import { ComingSoon } from "../../misc/ComingSoon";
 
 const News = () => {
-  return <>News owo</>;
+  return (
+    <>
+      {" "}
+      <ComingSoon />
+    </>
+  );
 };
 
 export default News;

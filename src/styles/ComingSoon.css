@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
+
+h1,
+h2 {
+  font-family: "Asap", "Roboto";
+}
+@media only screen and (min-width: 1000px) {
+  .coming-soon-teemo {
+    width: 50% !important;
+  }
+}
+@media only screen and (max-width: 999px) {
+  .coming-soon-teemo {
+    width: 50% !important;
+    width: 60% !important;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .coming-soon-teemo {
+    width: 100% !important;
+  }
+}

@@ -1,13 +1,13 @@
 import React from "react";
-import "../styles/Countdown.css";
+import "../styles/LeaderboardInfo.css";
 
-export const Countdown = () => {
+export const LeaderboardInfo = () => {
   return (
     <div className="container countdown">
-      <h2>
-        <span className="badge time  mx-1 time-minutes"> 30m </span>
-        <span className="badge time mx-1 time-seconds"> 00s </span>
-      </h2>
+      <span className="badge rounded-pill bg-primary mx-2">Players: 200</span>
+      <span className="badge rounded-pill bg-warning mx-2">
+        Updated: 21-May-2021
+      </span>
     </div>
   );
 };

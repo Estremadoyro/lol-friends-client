@@ -3,7 +3,7 @@
   width: 200px;
   font-weight: bold;
   font-size: 1.55rem;
-  background-color: #a398ffbd;
+  background-color: #928afc;
   color: #fff !important;
 }
 .select.option.is-selected {
@@ -12,11 +12,11 @@
 
 @media screen and (max-width: 767px) {
   .region-navbar {
-    width: 100% !important; 
+    width: 100% !important;
   }
 }
 @media screen and (min-width: 769px) {
   .region-navbar {
-    width: inherit !important; 
+    width: inherit !important;
   }
 }
