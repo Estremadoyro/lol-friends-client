@@ -22,7 +22,6 @@ export const loadRegionAction = () => (dispatch) => {
   }
   dispatch({
     type: LOAD_REGION_ERROR,
-    payload: "Region doesn't exist",
   });
 };
 export const switchRegionAction = (region) => (dispatch) => {

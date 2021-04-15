@@ -20,6 +20,8 @@ export const regionReducer = (state = initialState, action) => {
       localStorage.setItem("region", payload);
       return { ...state, region: payload };
     case LOAD_REGION_ERROR:
+      localStorage.setItem("region", "la2");
+      return { ...state, region: "la2" };
     case SWITCH_REGION_ERROR:
       localStorage.setItem("region", "la2");
       return { ...state, error: payload };

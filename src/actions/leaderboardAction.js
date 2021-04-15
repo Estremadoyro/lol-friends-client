@@ -9,14 +9,15 @@ import {
 import { apiEnvironment } from "../api/apiEnvironment";
 
 export const loadLeaderboardAction = (region, league) => async (dispatch) => {
+  // console.log(apiEnvironment());
   // console.log(`${region} || ${league}`);
+  const parameters = `${apiEnvironment()}/api/v1.1/leaderboard/${region}/${league}`;
+  // console.log(parameters);
   dispatch({
     type: LOAD_LEADERBOARD,
   });
   try {
-    const { data } = await axios.get(
-      `${apiEnvironment}/api/v1.1/leaderboard/${region}/${league}`
-    );
+    const { data } = await axios.get(parameters);
     dispatch({
       type: LOAD_LEADERBOARD_SUCCESS,
       payload: data.players,
