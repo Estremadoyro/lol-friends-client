@@ -49,7 +49,7 @@ const Leaderboard = ({
             >
               {player.rank}
             </span>
-            {player.summonerName}
+            <span className="leaderboard-summoner-name">{player.summonerName}</span>
           </td>
           <td className="align-middle">{player.leaguePoints}</td>
           <td className="align-middle">

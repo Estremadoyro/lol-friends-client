@@ -1,6 +1,7 @@
 import React from "react";
 import { selectRegion } from "../misc/Variables";
 import "../styles/SummonerPreviewCard.css";
+
 export const SummonerPreviewCard = ({ player }) => {
   const getRegionName = (playerRegion) => {
     const obj = selectRegion.regions.filter((region) => {
@@ -10,10 +11,13 @@ export const SummonerPreviewCard = ({ player }) => {
   };
   return (
     <div className="col mx-auto my-4">
-      <div className="card">
+      <div className="card shadow full-card-border">
         <div className="row g-0">
           <div className="col-md-4 ">
-            <img src={player.profileIconUrl} className="home-summoner-icon" />
+            <img
+              src={player.profileIconUrl}
+              className="home-summoner-icon img-card-border"
+            />
           </div>
           <div className="col-md-8">
             <div className="card-body">
