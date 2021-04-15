@@ -6,7 +6,7 @@ import {
 } from "../action-types/types";
 
 const initialState = {
-  region: localStorage.getItem("region"),
+  region: "la2",
   error: null,
 };
 
