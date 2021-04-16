@@ -1,1 +1,1 @@
-worker:npm build
+worker:react-scripts build
