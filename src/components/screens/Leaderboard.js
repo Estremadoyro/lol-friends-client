@@ -16,6 +16,8 @@ import { LeaderboardInfo } from "../LeaderboardInfo";
 import { UpdatedRank } from "../UpdatedRank";
 import Pagination from "../Pagination";
 
+import Emoji from "../../misc/Emoji";
+
 import "../../styles/Leaderboard.css";
 import "../../styles/Pagination.css";
 
@@ -24,6 +26,7 @@ const Leaderboard = ({
   league,
   region,
   loading,
+  error,
   loadLeaderboardAction,
 }) => {
   // console.log(process.env.NODE_ENV);
@@ -49,7 +52,9 @@ const Leaderboard = ({
             >
               {player.rank}
             </span>
-            <span className="leaderboard-summoner-name">{player.summonerName}</span>
+            <span className="leaderboard-summoner-name">
+              {player.summonerName}
+            </span>
           </td>
           <td className="align-middle">{player.leaguePoints}</td>
           <td className="align-middle">
@@ -114,6 +119,22 @@ const Leaderboard = ({
             </tbody>
           </table>
         </div>
+        {error && (
+          <div className="alert alert-danger my-2" role="alert">
+            {error} <Emoji symbol="😥" label="sheep" />
+            <br />
+            <div>
+              Please let
+              <a
+                href="https://www.instagram.com/leoestremadoyro/"
+                target="blank_"
+              >
+                <span className="error-contact-link fw-bold"> me </span>
+              </a>
+              know
+            </div>
+          </div>
+        )}
         {players.length > 0 && !loading ? (
           <Pagination
             players={players}
@@ -133,6 +154,7 @@ Leaderboard.propTypes = {
   players: PropTypes.array.isRequired,
   region: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired,
+  error: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
@@ -140,6 +162,7 @@ const mapStateToProps = (state) => ({
   players: state.leaderboardReducer.players,
   region: state.regionReducer.region,
   loading: state.leaderboardReducer.loading,
+  error: state.leaderboardReducer.error,
 });
 
 export default connect(mapStateToProps, {

@@ -25,10 +25,18 @@ export const searchSummonerAction = (summonerName, region) => async (
       payload: data,
     });
   } catch (err) {
-    dispatch(setAlertAction(err.response.data.error));
+    if (err.response) {
+      dispatch(setAlertAction(err.response.data.error));
+      dispatch({
+        type: SEARCH_SUMMONER_ERROR,
+        payload: err.response.data.error,
+      });
+      return;
+    }
+    dispatch(setAlertAction("Server error"));
     dispatch({
       type: SEARCH_SUMMONER_ERROR,
-      payload: err.response.data.error,
+      payload: "Server error",
     });
   }
 };

@@ -45,3 +45,11 @@ th {
   /* background-color:#928afc; */
   background-color: #928afc;
 }
+
+.error-contact-link {
+  color: #842539;
+  font-style: bold;
+}
+a {
+  text-decoration: none !important;
+}

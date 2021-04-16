@@ -23,10 +23,16 @@ export const loadLeaderboardAction = (region, league) => async (dispatch) => {
       payload: data.players,
     });
   } catch (err) {
-    // console.log(err);
+    if (err.response) {
+      dispatch({
+        type: LOAD_LEADERBOARD_ERROR,
+        payload: err.response.data.error,
+      });
+      return;
+    }
     dispatch({
       type: LOAD_LEADERBOARD_ERROR,
-      payload: err.response.data.error,
+      payload: "Server error",
     });
   }
 };
