@@ -19,7 +19,7 @@ const Home = ({ player, loading, error }) => {
         <HomeLogo />
         <SearchSummonerBar />
         {error && (
-          <div className="alert alert-danger my-2" role="alert">
+          <div className="alert alert-danger my-2 text-center" role="alert">
             {error} <Emoji symbol="😥" label="sheep" />
           </div>
         )}
@@ -27,7 +27,6 @@ const Home = ({ player, loading, error }) => {
         {!loading && player ? (
           <SummonerPreviewCard player={player.player} />
         ) : null}
-        {/* <SummonerPreviewSkeleton /> */}
         <HomeNews />
       </div>
       <Footer />
