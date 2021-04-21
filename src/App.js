@@ -6,6 +6,7 @@ import Leaderboard from "./components/screens/Leaderboard";
 import Champions from "./components/screens/Champions";
 import Reports from "./components/screens/Reports";
 import News from "./components/screens/News";
+import ImageDownloadComponent from "./components/ImageDownloadComponent";
 
 import Navbar from "./components/Navbar";
 import { Provider } from "react-redux";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/champions" component={Champions} exact />
           <Route path="/reports" component={Reports} exact />
           <Route path="/news" component={News} exact />
+          <Route path="/test" component={ImageDownloadComponent} exact />
         </BrowserRouter>
       </Fragment>
     </Provider>

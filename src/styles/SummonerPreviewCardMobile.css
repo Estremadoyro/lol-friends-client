@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
+
+.summoner-card-mobile > .summoner-card-container {
+  width: 300px;
+  height: 500px;
+  margin-left: auto;
+  border-radius: 25px;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.summoner-card-mobile
+  > .summoner-card-container
+  > .row
+  > .summoner-card-image-container {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.summoner-card-mobile
+  > .summoner-card-container
+  > .row
+  > .summoner-card-image-container
+  > .summoner-card-image {
+  width: 300px;
+  height: 300px;
+}
+
+.summoner-card-mobile
+  > .summoner-card-container
+  > .row
+  > .summoner-card-image-container
+  > .summoner-card-image
+  > img {
+  border-radius: 25px 25px 0 0;
+  width: 300px;
+  height: 300px;
+}
+
+.summoner-card-mobile > .summoner-card-container > .row > .summoner-card-info {
+  height: auto;
+}
+
+.summoner-card-mobile
+  > .summoner-card-container
+  > .row
+  > .summoner-card-image-container
+  > .summoner-card-level {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -24px;
+  background-color: rgba(186, 187, 251, 0.55);
+  width: 300px;
+  font-family: "Asap", "Roboto";
+  font-weight: bold;
+}
+
+.summoner-card-mobile
+  > .summoner-card-container
+  > .row
+  > .summoner-card-info
+  > .summoner-card-name {
+  display: inline-block;
+  font-weight: bold;
+  font-family: "Asap", "Roboto";
+  text-align: center;
+  font-size: 1.7rem;
+  margin-left: 0.3rem;
+}
+
+.summoner-card-mobile
+  > .summoner-card-container
+  > .row
+  > .summoner-card-info
+  > .summoner-card-region {
+  margin-top: 10px;
+  margin-left: 10px;
+  position: absolute;
+  display: inline-block;
+}
+
+.summoner-circle-loss {
+  color: #dc3545;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.summoner-circle-win {
+  color: #0d6efd;
+}

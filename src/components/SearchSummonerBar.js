@@ -32,6 +32,7 @@ const SearchSummonerBar = ({ searchSummonerAction, region, loading }) => {
             className="form-control "
             placeholder="Rekkles, Runewolf, Sethsu ..."
             onChange={(e) => setSummoner(e.target.value)}
+            autoFocus
           />
           <span className="input-group-text">
             <i className="fas fa-search"></i>

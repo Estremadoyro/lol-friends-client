@@ -36,7 +36,7 @@ i .fas {
   box-shadow: none;
 }
 
-@media screen and (max-width: 1025px) and (min-width: 768px) {
+@media screen and (max-width: 1030px) and (min-width: 768px) {
   .nav-item-name {
     display: none;
   }

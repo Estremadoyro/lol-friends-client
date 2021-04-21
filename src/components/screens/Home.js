@@ -5,7 +5,7 @@ import { Footer } from "../Footer";
 import SearchSummonerBar from "../SearchSummonerBar";
 import { HomeLogo } from "../HomeLogo";
 import { HomeNews } from "../HomeNews";
-import { SummonerPreviewCard } from "../SummonerPreviewCard";
+import { SummonerPreviewCard } from "../summoner-preview-card/SummonerPreviewCard";
 import { SummonerPreviewSkeleton } from "../skeletons/SummonerPreviewSkeleton";
 import Emoji from "../../misc/Emoji";
 
@@ -27,6 +27,7 @@ const Home = ({ player, loading, error }) => {
         {!loading && player ? (
           <SummonerPreviewCard player={player.player} />
         ) : null}
+
         <HomeNews />
       </div>
       <Footer />
