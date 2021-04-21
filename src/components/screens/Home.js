@@ -27,7 +27,18 @@ const Home = ({ player, loading, error }) => {
         {!loading && player ? (
           <SummonerPreviewCard player={player.player} />
         ) : null}
-
+        <p class="text-muted text-center">
+          Summoner Preview cards are currently being developed, checkout{" "}
+          <a
+            href="https://github.com/Estremadoyro/lol-friends-client/wiki/LoL-Friends-(Wiki)"
+            target="blank_"
+          >
+            {" "}
+            wiki{" "}
+          </a>{" "}
+          for the PS preview.{" "}
+        </p>
+        <h3 className="fw-bold text-center">News</h3>
         <HomeNews />
       </div>
       <Footer />

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import Region from "../components/Region";
+import Emoji from "../misc/Emoji";
 
 import "../styles/Navbar.css";
 import "../scripts/Navbar.js";
@@ -43,7 +44,9 @@ const Navbar = () => {
                 activeStyle={{ color: "#ffffff" }}
               >
                 <i className="fas fa-trophy mx-1"></i>
-                <span className="nav-item-name">Leaderboard </span>
+                <span className="nav-item-name">
+                  Leaderboard <Emoji symbol="✨" label="sheep" />
+                </span>
               </NavLink>
             </li>
             <li className="nav-item mx-3">

@@ -21,7 +21,12 @@ export const SummonerPreviewCardDesktop = ({ player }) => {
           </div>
           <div className="col-8 summoner-card-info">
             <div className="summoner-card-name">{player.name}</div>
-            Desktop owowaa
+            <span
+              className="summoner-card-region badge rounded-pill "
+              style={{ backgroundColor: "rgb(100 102 245)" }}
+            >
+              {getRegionName(player.region)}
+            </span>
           </div>
         </div>
       </div>

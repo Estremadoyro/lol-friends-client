@@ -17,13 +17,7 @@ export const SummonerPreviewCardMobile = ({ player }) => {
               alt="https://cdn.communitydragon.org/11.7.9/profile-icon/29"
               wrapperClassName="summoner-card-image"
             />
-            <span className="summoner-card-level">
-              <i className="fas fa-circle summoner-circle-loss"></i>
-              <i className="fas fa-circle summoner-circle-win"></i>
-              <i className="fas fa-circle summoner-circle-loss"></i>
-              <i className="fas fa-circle summoner-circle-win"></i>
-              <i className="fas fa-circle summoner-circle-win"></i>
-            </span>
+            <span className="summoner-card-level">{player.summonerLevel}</span>
           </div>
           <div className="col-12 summoner-card-info">
             <div className="summoner-card-name">{player.name}</div>
@@ -33,7 +27,6 @@ export const SummonerPreviewCardMobile = ({ player }) => {
             >
               {getRegionName(player.region)}
             </span>
-            <p>Mobile XDXDX</p>
           </div>
         </div>
       </div>
