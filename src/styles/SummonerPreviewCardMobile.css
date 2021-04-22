@@ -50,6 +50,7 @@
   text-align: center;
   color: #fff;
   position: absolute;
+  bottom: 0px !important;
   margin-left: auto;
   margin-right: auto;
   margin-top: -24px;
