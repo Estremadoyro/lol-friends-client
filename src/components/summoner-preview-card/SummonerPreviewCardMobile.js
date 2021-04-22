@@ -17,7 +17,7 @@ export const SummonerPreviewCardMobile = ({ player }) => {
               alt="https://cdn.communitydragon.org/11.7.9/profile-icon/29"
               wrapperClassName="summoner-card-image"
             />
-            <span className="summoner-card-level">{player.summonerLevel}</span>
+            <div className="summoner-card-level">{player.summonerLevel}</div>
           </div>
           <div className="col-12 summoner-card-info">
             <div className="summoner-card-name">{player.name}</div>
