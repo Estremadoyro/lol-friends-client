@@ -38,6 +38,6 @@ See also: https://github.com/Estremadoyro/lol-friends-server
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run: owo
 
 ### `npm start`
