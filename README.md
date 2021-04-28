@@ -8,6 +8,10 @@ League of Legends app built with using the MERN stack, aiming to add features no
 
 See also: https://github.com/Estremadoyro/lol-friends-server
 
+# Arquitecture
+
+![alt text](https://i.imgur.com/M86nDCi.png)
+
 ## TODO features:
 
 - Report player
