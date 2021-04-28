@@ -10,7 +10,7 @@ See also: https://github.com/Estremadoyro/lol-friends-server
 
 # Arquitecture
 
-![alt text](https://i.imgur.com/M86nDCi.png)
+![alt text](https://i.imgur.com/HGYTP9I.png)
 
 ## TODO features:
 
