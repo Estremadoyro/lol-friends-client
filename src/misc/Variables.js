@@ -36,6 +36,14 @@ export const selectRegion = {
       name: "JAPAN",
       value: "jp1",
     },
+    {
+      name: "KOREA",
+      value: "kr",
+    },
+    {
+      name: "OCE",
+      value: "oc1",
+    },
   ],
 };
 
