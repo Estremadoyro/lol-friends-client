@@ -51,8 +51,8 @@ Home.propTypes = {
   error: PropTypes.string.isRequired,
 };
 const mapStateToProps = (state) => ({
-  player: state.searchSummonerReducer.player,
-  loading: state.searchSummonerReducer.loading,
+  player: state.summonerReducer.player,
+  loading: state.summonerReducer.loading,
   error: state.alertReducer.alert,
 });
 

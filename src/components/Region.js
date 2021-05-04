@@ -8,7 +8,7 @@ import { switchRegionAction } from "../actions/regionAction";
 import "../styles/Region.css";
 import "../scripts/Region.js";
 
-const Region = ({ region, switchRegionAction }) => {
+const Region = ({ region, loading, switchRegionAction }) => {
   return (
     <div className="region-navbar">
       <ul
@@ -25,6 +25,7 @@ const Region = ({ region, switchRegionAction }) => {
               // console.log(e.target.value);
               switchRegionAction(e.target.value);
             }}
+            disabled={loading}
           >
             {selectRegion.regions.map((region) => {
               return (
@@ -46,11 +47,13 @@ const Region = ({ region, switchRegionAction }) => {
 
 Region.propTypes = {
   region: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
   switchRegionAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   region: state.regionReducer.region,
+  loading: state.regionReducer.loading,
 });
 
 export default connect(mapStateToProps, {

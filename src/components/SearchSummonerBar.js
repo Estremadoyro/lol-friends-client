@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { searchSummonerAction } from "../actions/searchSummonerAction";
+import { searchSummonerAction } from "../actions/summonerAction";
 
 import "../styles/SearchSummonerBar.css";
 
@@ -58,7 +58,7 @@ SearchSummonerBar.propTypes = {
 
 const mapStateToProps = (state) => ({
   region: state.regionReducer.region,
-  loading: state.searchSummonerReducer.loading,
+  loading: state.summonerReducer.loading,
 });
 
 export default connect(mapStateToProps, {
