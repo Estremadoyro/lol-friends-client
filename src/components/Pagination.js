@@ -4,17 +4,26 @@ import PropTypes from "prop-types";
 
 import ReactPaginate from "react-paginate";
 
+/**
+  * @typedef Props
+  * @type {object}
+  * @property {number} pageCount
+  * @property {string} region
+  * @property {string} region
+  * @property {function} onPageChange
+  * @property {object[]} players
+  *
+  * @param {Props}
+  */
 const Pagination = ({
-  players,
-  playersPerPage,
-  setPageNumber,
+  pageCount,
+  onPageChange,
   region,
   league,
 }) => {
-  const pageCount = Math.ceil(players.length / playersPerPage);
 
   const changePage = ({ selected }) => {
-    setPageNumber(selected);
+    onPageChange(selected);
   };
 
   useEffect(() => {

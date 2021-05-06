@@ -21,8 +21,18 @@ import Emoji from "../../misc/Emoji";
 import "../../styles/Leaderboard.css";
 import "../../styles/Pagination.css";
 
+
+/**
+  * @typedef Props
+  * @type {object}
+  * @property {number} pageCount
+  * @property {object[]} players
+  *
+  * @param {Props}
+  */
 const Leaderboard = ({
   players,
+  pageCount,
   league,
   region,
   loading,
@@ -38,6 +48,14 @@ const Leaderboard = ({
   const getPlayers = async () => {
     loadLeaderboardAction(region, league);
   };
+
+  /**
+    * @param {number} selected Page number current selected
+    */
+  const onPageChange = (selected) => {
+    setPageNumber(selected);
+    // TODO fetch players for this page (selected as query parameter)
+  }
 
   const displayPlayers = players
     .slice(pagesVisited, pagesVisited + playersPerPage)
@@ -137,10 +155,8 @@ const Leaderboard = ({
         )}
         {players.length > 0 && !loading ? (
           <Pagination
-            players={players}
-            displayPlayers={displayPlayers}
-            playersPerPage={playersPerPage}
-            setPageNumber={setPageNumber}
+            pageCount={pageCount}
+            onPageChange={onPageChange} 
           />
         ) : null}
       </div>
