@@ -4,5 +4,5 @@ export const getRegionName = (playerRegion) => {
   const obj = selectRegion.regions.filter((region) => {
     return region.value === playerRegion;
   });
-  return obj[0].name;
+  return { cardRegion: obj[0].card, cardRegionId: obj[0].cardId };
 };

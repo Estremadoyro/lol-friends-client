@@ -1,0 +1,215 @@
+.summoner-region-las {
+  background-color: rgba(255, 122, 0, 1);
+}
+.summoner-region-lan {
+  background-color: rgba(255, 199, 0, 1);
+}
+.summoner-region-na {
+  background-color: rgba(48, 132, 255, 1);
+}
+.summoner-region-br {
+  background-color: rgba(131, 203, 40, 1);
+}
+.summoner-region-euw {
+  background-color: rgba(32, 201, 151, 1);
+}
+.summoner-region-eun {
+  background-color: rgba(40, 174, 203, 1);
+}
+.summoner-region-ru {
+  background-color: rgba(103, 101, 216, 1);
+}
+.summoner-region-tk {
+  background-color: rgba(238, 34, 53, 1);
+}
+.summoner-region-jp {
+  background-color: rgba(232, 96, 116, 1);
+}
+.summoner-region-kr {
+  background-color: rgba(252, 62, 199, 1);
+}
+.summoner-region-oce {
+  background-color: rgba(145, 222, 239, 1);
+}
+
+.summoner-winrate-golden {
+  color: rgba(204, 164, 61, 1);
+}
+.summoner-winrate-blue {
+  color: rgba(48, 132, 255, 1);
+}
+.summoner-winrate-red {
+  color: rgba(251, 99, 132, 1);
+}
+.summoner-winrate-gray {
+  color: rgba(95, 95, 123, 1);
+}
+
+/* Summoner card border 4 sides */
+.summoner-border-challenger {
+  border: double 7px transparent;
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at top, #f4c874 0%, #3fbfdd 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.summoner-border-grandmaster {
+  border: double 7px transparent;
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at top, #756572 0%, #cd4545 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.summoner-border-master {
+  border: double 7px transparent;
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at top, #a5584e 0%, #9d48e0 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.summoner-border-diamond {
+  border: 7px solid #576bce;
+}
+.summoner-border-platinum {
+  border: 7px solid #4e9996;
+}
+.summoner-border-gold {
+  border: 7px solid #cd8837;
+}
+.summoner-border-silver {
+  border: 7px solid #80989d;
+}
+.summoner-border-bronze {
+  border: 7px solid #8c523a;
+}
+.summoner-border-iron {
+  border: 7px solid #576bce;
+}
+.summoner-border-unranked {
+  border: 7px solid #5f5f7b;
+}
+/* Right border 7px  */
+.summoner-border-right-challenger {
+  border-right: 7px solid rgba(63, 191, 221, 1);
+}
+.summoner-border-right-grandmaster {
+  border-right: 7px solid rgba(205, 69, 69, 1);
+}
+.summoner-border-right-master {
+  border-right: 7px solid rgba(157, 72, 224, 1);
+}
+.summoner-border-right-diamond {
+  border-right: 7px solid #576bce;
+}
+.summoner-border-right-platinum {
+  border-right: 7px solid #4e9996;
+}
+.summoner-border-right-gold {
+  border-right: 7px solid #cd8837;
+}
+.summoner-border-right-silver {
+  border-right: 7px solid #80989d;
+}
+.summoner-border-right-bronze {
+  border-right: 7px solid #8c523a;
+}
+.summoner-border-right-iron {
+  border-right: 7px solid #576bce;
+}
+.summoner-border-right-unranked {
+  border-right: 7px solid #5f5f7b;
+}
+/* Small level region border */
+.summoner-border-sm-challenger {
+  border: 3px solid rgba(63, 191, 221, 1);
+}
+.summoner-border-sm-grandmaster {
+  border: 3px solid rgba(205, 69, 69, 1);
+}
+.summoner-border-sm-master {
+  border: 3px solid rgba(157, 72, 224, 1);
+}
+.summoner-border-sm-diamond {
+  border: 3px solid #576bce;
+}
+.summoner-border-sm-platinum {
+  border: 3px solid #4e9996;
+}
+.summoner-border-sm-gold {
+  border: 3px solid #cd8837;
+}
+.summoner-border-sm-silver {
+  border: 3px solid #80989d;
+}
+.summoner-border-sm-bronze {
+  border: 3px solid #8c523a;
+}
+.summoner-border-sm-iron {
+  border: 3px solid #576bce;
+}
+.summoner-border-sm-unranked {
+  border: 3px solid #5f5f7b;
+}
+/* Summoner name background color */
+.summoner-bg-challenger {
+  background-color: rgba(63, 191, 221, 0.7);
+}
+.summoner-bg-grandmaster {
+  background-color: rgba(205, 69, 69, 0.7);
+}
+.summoner-bg-master {
+  background-color: rgba(157, 72, 224, 0.7);
+}
+.summoner-bg-diamond {
+  background-color: rgba(87, 107, 206, 0.7);
+}
+.summoner-bg-platinum {
+  background-color: rgba(78, 153, 150, 0.7);
+}
+.summoner-bg-gold {
+  background-color: rgba(205, 136, 55, 0.7);
+}
+.summoner-bg-silver {
+  background-color: rgba(128, 152, 157, 0.7);
+}
+.summoner-bg-bronze {
+  background-color: rgba(140, 82, 58, 0.7);
+}
+.summoner-bg-iron {
+  background-color: rgba(87, 77, 79, 0.7);
+}
+.summoner-bg-unranked {
+  background-color: rgba(95, 95, 123, 0.7);
+}
+
+/* Summoner league division background */
+.summoner-league-division-challenger {
+  background-color: rgba(63, 191, 221);
+}
+.summoner-league-division-grandmaster {
+  background-color: rgba(205, 69, 69);
+}
+.summoner-league-division-master {
+  background-color: rgba(157, 72, 224);
+}
+.summoner-league-division-diamond {
+  background-color: rgba(87, 107, 206);
+}
+.summoner-league-division-platinum {
+  background-color: rgba(78, 153, 150);
+}
+.summoner-league-division-gold {
+  background-color: rgba(205, 136, 55);
+}
+.summoner-league-division-silver {
+  background-color: rgba(128, 152, 157);
+}
+.summoner-league-division-bronze {
+  background-color: rgba(140, 82, 58);
+}
+.summoner-league-division-iron {
+  background-color: rgba(87, 77, 79);
+}
+.summoner-league-division-unranked {
+  background-color: rgba(95, 95, 123);
+}

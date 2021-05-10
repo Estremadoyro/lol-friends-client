@@ -1,8 +1,12 @@
 import React from "react";
 
 export const WRPerc = (props) => {
-  const wr = Math.round((props.wins / (props.wins + props.losses)) * 100, 0);
-
+  let wr;
+  if (!props.winrate) {
+    wr = Math.round((props.wins / (props.wins + props.losses)) * 100, 0);
+  } else {
+    wr = props.winrate;
+  }
   const blue = "rgb(55 164 235)";
   const red = "rgb(251 99 132)";
   const golden = "#CCA43D";
