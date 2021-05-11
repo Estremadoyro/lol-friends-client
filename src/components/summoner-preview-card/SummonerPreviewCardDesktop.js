@@ -5,6 +5,8 @@ import { getRegionName } from "../../shared-hooks/Functions";
 
 import { SummonerPreviewWinrate } from "../SummonerPreviewWinrate";
 import { SummonerPreviewShield } from "../SummonerPreviewShield";
+import { SummonerPreviewCardWinLossBar } from "../SummonerPreviewCardWinLossBar";
+import { SummonerPreviewCardLP } from "../SummonerPreviewCardLP";
 
 import "../../styles/SummonerPreviewCard.css";
 import "../../styles/SummonerPreviewCardDesktop.css";
@@ -67,9 +69,19 @@ export const SummonerPreviewCardDesktop = ({ player }) => {
                 </div>
                 <div className="league-stats">
                   <SummonerPreviewWinrate winrate={queue.winRate} />
-                  <div className="league-lp">{queue.leaguePoints}LP</div>
+                  <SummonerPreviewCardLP
+                    leaguePoints={queue.leaguePoints}
+                    promos={queue.promos}
+                  />
+                  {/* <div className="league-lp">{queue.leaguePoints}LP</div> */}
                 </div>
-                <div className="league-win-loss-bar">win-loss bar</div>
+                <div className="league-bar-container">
+                  <SummonerPreviewCardWinLossBar
+                    wins={queue.wins}
+                    losses={queue.losses}
+                    winrate={queue.winRate}
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -77,7 +89,7 @@ export const SummonerPreviewCardDesktop = ({ player }) => {
             {player.championMastery.slice(0, 4).map((champion) => (
               <div
                 className="summoner-card-mastery-champion"
-                key={champion.summonerId}
+                key={champion._id}
               >
                 <img src={champion.championIconUrl} />
               </div>

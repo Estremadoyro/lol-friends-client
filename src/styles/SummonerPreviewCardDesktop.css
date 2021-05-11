@@ -109,7 +109,7 @@
   font-weight: 700;
   font-style: normal;
   border-radius: 0 0 0 16px;
-  font-size: 26px;
+  font-size: 23px;
   width: 220px;
   font-family: "Asap", "Roboto";
 }
@@ -138,7 +138,7 @@
   > .col-3
   > .summoner-card-info {
   width: 400px;
-  /* border: 2px solid red; */
+  border: 2px solid red;
   height: 113px;
 }
 
@@ -152,6 +152,7 @@
   margin-left: 0.6rem;
   vertical-align: top;
   display: inline-block;
+  height: 70px;
 }
 .summoner-card-desktop
   > .summoner-card-container
@@ -174,7 +175,7 @@
   margin-top: 0.2rem;
   height: 70px;
   vertical-align: top;
-  border: 2px solid #ff7a00;
+  /* border: 2px solid #ff7a00; */
   display: inline-block;
 }
 .summoner-card-desktop
@@ -262,6 +263,87 @@
   justify-content: center;
   color: #000000;
 }
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-stats
+  > .league-lp
+  > .league-promos {
+  margin-bottom: 0.8rem;
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-stats
+  > .league-lp
+  > .league-promos
+  > .promo-g {
+  margin-left: 0.1rem;
+  margin-left: 0.1rem;
+  display: inline-flex;
+  height: 15px;
+  border-radius: 50%;
+  width: 15px;
+  background-color: #000000;
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-stats
+  > .league-lp
+  > .league-promos
+  > .promo-g-w {
+  margin-left: 0.1rem;
+  margin-left: 0.1rem;
+  display: inline-flex;
+  height: 15px;
+  border-radius: 50%;
+  width: 15px;
+  background-color: rgba(51, 133, 246, 1);
+  border: 2px solid rgba(68, 168, 235, 1);
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-stats
+  > .league-lp
+  > .league-promos
+  > .promo-g-l {
+  margin-left: 0.1rem;
+  margin-left: 0.1rem;
+  display: inline-flex;
+  height: 15px;
+  border-radius: 50%;
+  width: 15px;
+  background-color: rgba(224, 44, 62, 1);
+  border: 2px solid rgba(255, 129, 155, 1);
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-stats
+  > .league-lp
+  > .league-promos
+  > .promo-g-n {
+  margin-left: 0.1rem;
+  margin-left: 0.1rem;
+  display: inline-flex;
+  height: 15px;
+  border-radius: 50%;
+  width: 15px;
+  background-color: rgba(95, 95, 123, 0.4);
+  border: 2px solid rgb(153, 153, 167);
+}
 
 /* Champion Mastery */
 .summoner-card-desktop
@@ -296,4 +378,78 @@
   border-radius: 50%;
   height: inherit;
   width: inherit;
+}
+
+/* Win loss bar */
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-bar-container
+  > .league-win-loss-bar {
+  font-family: "Baloo 2", "Asap";
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+  width: 350px;
+  height: 25px;
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-bar-container
+  > .league-win-loss-bar
+  > .league-wins {
+  display: inline-block;
+  /* width: 60%; */
+  height: inherit;
+  background-color: rgba(51, 133, 246, 1);
+  border: 2px solid rgba(68, 168, 235, 1);
+  border-radius: 25px 0 0 25px;
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-bar-container
+  > .league-win-loss-bar
+  > .league-losses {
+  display: inline-block;
+  /* width: 40%; */
+  height: inherit;
+  background-color: rgba(224, 44, 62, 1);
+  border: 2px solid rgba(255, 129, 155, 1);
+  border-radius: 0 25px 25px 0;
+}
+
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-bar-container
+  > .league-win-loss-bar
+  > .league-unranked {
+  color: #000 !important;
+  width: 100%;
+  display: inline-block;
+  height: inherit;
+  background-color: rgba(95, 95, 123, 0.4);
+  border: 2px solid rgba(95, 95, 123, 0.7);
+  border-radius: 25px;
 }
