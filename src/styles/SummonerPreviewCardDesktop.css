@@ -109,7 +109,7 @@
   font-weight: 700;
   font-style: normal;
   border-radius: 0 0 0 16px;
-  font-size: 23px;
+  font-size: 24px;
   width: 220px;
   font-family: "Asap", "Roboto";
 }
@@ -138,7 +138,7 @@
   > .col-3
   > .summoner-card-info {
   width: 400px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: 113px;
 }
 

@@ -73,7 +73,6 @@ export const SummonerPreviewCardDesktop = ({ player }) => {
                     leaguePoints={queue.leaguePoints}
                     promos={queue.promos}
                   />
-                  {/* <div className="league-lp">{queue.leaguePoints}LP</div> */}
                 </div>
                 <div className="league-bar-container">
                   <SummonerPreviewCardWinLossBar

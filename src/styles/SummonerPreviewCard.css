@@ -119,6 +119,68 @@
 .summoner-border-right-unranked {
   border-right: 7px solid #5f5f7b;
 }
+/* Bottom border 3.5px on first child */
+.summoner-border-right-challenger > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid rgba(63, 191, 221, 1);
+}
+.summoner-border-right-grandmaster > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid rgba(205, 69, 69, 1);
+}
+.summoner-border-right-master > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid rgba(157, 72, 224, 1);
+}
+.summoner-border-right-diamond > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid #576bce;
+}
+.summoner-border-right-platinum > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid #4e9996;
+}
+.summoner-border-right-gold > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid #cd8837;
+}
+.summoner-border-right-silver > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid #80989d;
+}
+.summoner-border-right-bronze > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid #8c523a;
+}
+.summoner-border-right-iron > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid #576bce;
+}
+.summoner-border-right-unranked > .summoner-card-info:first-child {
+  border-bottom: 3.5px solid #5f5f7b;
+}
+/* Top border 3.5px */
+.summoner-border-right-challenger > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid rgba(63, 191, 221, 1);
+}
+.summoner-border-right-grandmaster > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid rgba(205, 69, 69, 1);
+}
+.summoner-border-right-master > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid rgba(157, 72, 224, 1);
+}
+.summoner-border-right-diamond > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid #576bce;
+}
+.summoner-border-right-platinum > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid #4e9996;
+}
+.summoner-border-right-gold > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid #cd8837;
+}
+.summoner-border-right-silver > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid #80989d;
+}
+.summoner-border-right-bronze > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid #8c523a;
+}
+.summoner-border-right-iron > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid #576bce;
+}
+.summoner-border-right-unranked > .summoner-card-info:nth-child(2) {
+  border-top: 3.5px solid #5f5f7b;
+}
 /* Small level region border */
 .summoner-border-sm-challenger {
   border: 3px solid rgba(63, 191, 221, 1);
