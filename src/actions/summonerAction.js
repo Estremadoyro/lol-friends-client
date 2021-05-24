@@ -21,7 +21,7 @@ export const searchSummonerAction = (summonerName, region) => async (dispatch) =
   dispatch(removeAlertAction());
   dispatch({ type: USING_REGION });
   const summonerIsFound = await dispatch(findSummonerAction(summonerName, region));
-  console.log(summonerIsFound);
+  // console.log(summonerIsFound);
   if (summonerIsFound && Object.keys(summonerIsFound).length === 0 && summonerIsFound.constructor === Object) {
     await dispatch(createSummonerAction(summonerName, region));
   }

@@ -7,7 +7,7 @@ import { SummonerPreviewCardMobile } from "./SummonerPreviewCardMobile";
 import { useScreenType } from "../../shared-hooks/useScreenType";
 
 export const SummonerPreviewCard = ({ player }) => {
-  console.log(player);
+  // console.log(player);
   const screenType = useScreenType();
 
   switch (screenType) {

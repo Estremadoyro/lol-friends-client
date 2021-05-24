@@ -5,7 +5,7 @@ export const SummonerPreviewCardMastery = ({ champion }) => {
   if (champion.championLevel == 7) color = "rgba(51, 133, 246, 0.6)";
   if (champion.championLevel == 6) color = "rgba(102, 101, 215, 0.6)";
   if (champion.championLevel == 5) color = "rgba(232, 96, 116, 0.6)";
-  console.log(color);
+  // console.log(color);
   return (
     <div className="summoner-card-mastery-champion">
       <div className="champion-icon">
