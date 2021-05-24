@@ -1,0 +1,37 @@
+/* Asap */
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
+
+/* Baloo */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap");
+
+#summoner-download-btn {
+  margin-top: 1rem;
+}
+
+.desktop-btn-download {
+  background-color: #6466f5;
+  color: #fff;
+  border-radius: 25px;
+  border: 2px solid #928afc;
+  font-family: "Asap", "Baloo 2";
+  font-size: 1rem;
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.desktop-btn-download:disabled {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.desktop-btn-download:hover {
+  background-color: #4042e4;
+}
+
+.fa-download {
+  /* margin-left: 0.5rem; */
+}

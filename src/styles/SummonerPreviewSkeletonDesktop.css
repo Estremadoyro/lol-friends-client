@@ -1,0 +1,57 @@
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-bar-container
+  > .league-win-loss-bar
+  > .league-wins-skeleton {
+  display: inline-block;
+}
+
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .col-3
+  > .summoner-card-info
+  > .league-bar-container
+  > .league-win-loss-bar
+  > .league-losses-skeleton {
+  display: inline-block;
+}
+
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .summoner-card-image-container
+  > .summoner-card-region-level
+  > .summoner-card-region-skeleton {
+  width: 70px;
+  height: 35px;
+  display: inline-block;
+  border-radius: 25px 0 0 25px;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: bold;
+  font-family: "Asap", "Roboto";
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .summoner-card-image-container
+  > .summoner-card-image-skeleton {
+  text-align: center;
+}
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .summoner-card-mastery
+  > .summoner-card-mastery-champion
+  > .champion-icon-skeleton {
+  /* height: inherit; */
+  top: -2px;
+  height: 100px;
+}

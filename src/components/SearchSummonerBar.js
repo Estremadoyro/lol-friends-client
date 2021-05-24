@@ -38,11 +38,7 @@ const SearchSummonerBar = ({ searchSummonerAction, region, loading }) => {
             <i className="fas fa-search"></i>
           </span>
         </div>
-        <button
-          className="btn home-summoner-btn btn-block w-100"
-          type="submit"
-          disabled={loading}
-        >
+        <button className="btn home-summoner-btn btn-block w-100" type="submit" disabled={loading}>
           Find player owo!
         </button>
       </form>

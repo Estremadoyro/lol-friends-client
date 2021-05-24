@@ -9,13 +9,12 @@ import { SummonerPreviewCard } from "../summoner-preview-card/SummonerPreviewCar
 import { SummonerPreviewSkeleton } from "../skeletons/SummonerPreviewSkeleton";
 import Emoji from "../../misc/Emoji";
 
+import "../../scripts/SummonerPreviewCard";
+
 const Home = ({ player, loading, error }) => {
   return (
     <>
-      <div
-        className="container d-flex flex-column"
-        style={{ maxWidth: "800px" }}
-      >
+      <div className="container d-flex flex-column" style={{ maxWidth: "800px" }}>
         <HomeLogo />
         <SearchSummonerBar />
         {error && (
@@ -24,15 +23,10 @@ const Home = ({ player, loading, error }) => {
           </div>
         )}
         {loading && <SummonerPreviewSkeleton />}
-        {!loading && player ? (
-          <SummonerPreviewCard player={player.player} />
-        ) : null}
-        <p className="text-muted text-center">
+        {!loading && player ? <SummonerPreviewCard player={player.player} /> : null}
+        <p className="text-muted text-center mt-4">
           Summoner Preview cards are currently being developed, checkout{" "}
-          <a
-            href="https://github.com/Estremadoyro/lol-friends-client/wiki/LoL-Friends-(Wiki)"
-            target="blank_"
-          >
+          <a href="https://github.com/Estremadoyro/lol-friends-client/wiki/LoL-Friends-(Wiki)" target="blank_">
             {" "}
             wiki{" "}
           </a>{" "}

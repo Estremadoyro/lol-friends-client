@@ -5,7 +5,7 @@ import { HorizontalBar } from "react-chartjs-2";
 
 import "../styles/SummonerWRPreviewBar.css";
 
-export const SUmmonerPreviewWRBar = (props) => {
+export const SummonerPreviewWRBar = (props) => {
   const data = {
     labels: ["Record"],
     datasets: [

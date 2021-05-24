@@ -17,16 +17,12 @@ import { setAlertAction, removeAlertAction } from "./alertAction";
 
 import { apiEnvironment } from "../api/apiEnvironment";
 
-export const searchSummonerAction = (summonerName, region) => async (
-  dispatch
-) => {
+export const searchSummonerAction = (summonerName, region) => async (dispatch) => {
   dispatch(removeAlertAction());
   dispatch({ type: USING_REGION });
-  const summonerIsFound = await dispatch(
-    findSummonerAction(summonerName, region)
-  );
+  const summonerIsFound = await dispatch(findSummonerAction(summonerName, region));
   console.log(summonerIsFound);
-  if (!summonerIsFound.player) {
+  if (summonerIsFound && Object.keys(summonerIsFound).length === 0 && summonerIsFound.constructor === Object) {
     await dispatch(createSummonerAction(summonerName, region));
   }
   dispatch({ type: NOT_USING_REGION });
@@ -89,8 +85,6 @@ const createSummonerAction = (summonerName, region) => async (dispatch) => {
   }
 };
 
-export const updateSummonerAction = (summonerName, region) => async (
-  dispatch
-) => {
+export const updateSummonerAction = (summonerName, region) => async (dispatch) => {
   dispatch({ type: UPDATE_SUMMONER });
 };

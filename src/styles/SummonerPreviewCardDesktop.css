@@ -9,18 +9,19 @@
   height: 240px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 3.5rem;
   border-radius: 25px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.775) !important;
 }
 
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .summoner-card-image-container {
+.summoner-card-desktop > .summoner-card-container > .row > .summoner-card-image-container {
   display: inline-block;
   padding-right: 0px;
   border-radius: 25px 0 0 25px;
-  width: inherit;
-  height: inherit;
+  width: 238px;
+  height: 226px;
+  /* width: inherit;
+  height: inherit; */
   position: relative;
 }
 
@@ -74,32 +75,19 @@
   border-radius: 0 25px 25px 0;
 }
 
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .summoner-card-image-container
-  > .summoner-card-image {
+.summoner-card-desktop > .summoner-card-container > .row > .summoner-card-image-container > .summoner-card-image {
   width: inherit;
   height: inherit;
 }
 
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .summoner-card-image-container
-  > .summoner-card-image
-  > img {
+.summoner-card-desktop > .summoner-card-container > .row > .summoner-card-image-container > .summoner-card-image > img {
   position: relative;
   width: 220px !important;
   height: 226px !important;
   border-radius: 16px 0 0 16px;
 }
 
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .summoner-card-image-container
-  > .summoner-card-name {
+.summoner-card-desktop > .summoner-card-container > .row > .summoner-card-image-container > .summoner-card-name {
   text-align: center;
   position: absolute;
   height: 40px;
@@ -117,14 +105,11 @@
 .summoner-card-desktop > .summoner-card-container > .row > .col-3 {
   padding-left: 0;
   width: 400px;
+  background-color: #fff;
 }
 
 /* Summoner info */
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .col-3
-  > .summoner-card-info {
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info {
   width: inherit;
   height: inherit;
   padding-left: 0px;
@@ -132,44 +117,25 @@
 }
 
 /* Solo ranked info  */
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .col-3
-  > .summoner-card-info {
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info {
   width: 400px;
   /* border: 2px solid red; */
   height: 113px;
 }
 
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .col-3
-  > .summoner-card-info
-  > .league-shield {
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info > .league-shield {
   margin-top: 0.2rem;
   margin-left: 0.6rem;
+  margin-bottom: 0.3rem;
   vertical-align: top;
   display: inline-block;
   height: 70px;
 }
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .col-3
-  > .summoner-card-info
-  > .league-shield
-  > img {
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info > .league-shield > img {
   height: 70px;
   /* border: 2px solid #f4c874; */
 }
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .col-3
-  > .summoner-card-info
-  > .league-queue-division {
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info > .league-queue-division {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
   margin-top: 0.2rem;
@@ -213,12 +179,7 @@
   font-family: "Baloo 2", "Asap";
   font-size: 18px;
 }
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .col-3
-  > .summoner-card-info
-  > .league-stats {
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info > .league-stats {
   margin-right: 0.6rem;
   margin-top: 0.2rem;
   vertical-align: top;
@@ -244,13 +205,7 @@
   font-size: 40px;
   justify-content: center;
 }
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .col-3
-  > .summoner-card-info
-  > .league-stats
-  > .league-lp {
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info > .league-stats > .league-lp {
   display: -webkit-flex;
   display: flex;
   align-items: center;
@@ -346,47 +301,66 @@
 }
 
 /* Champion Mastery */
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .summoner-card-mastery {
+.summoner-card-desktop > .summoner-card-container > .row > .summoner-card-mastery {
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 60px;
+  background-color: #fff;
+  border-radius: 0 21px 21px 0;
 }
-.summoner-card-desktop
-  > .summoner-card-container
-  > .row
-  > .summoner-card-mastery
-  > .summoner-card-mastery-champion {
+.summoner-card-desktop > .summoner-card-container > .row > .summoner-card-mastery > .summoner-card-mastery-champion {
+  overflow: hidden;
+  position: relative;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
-  padding: 0;
+  border-radius: 100px;
   height: 45px;
+  width: 45px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .summoner-card-desktop
   > .summoner-card-container
   > .row
   > .summoner-card-mastery
   > .summoner-card-mastery-champion
-  > img {
-  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 50%;
+  > .champion-icon {
   height: inherit;
-  width: inherit;
 }
-
-/* Win loss bar */
 .summoner-card-desktop
   > .summoner-card-container
   > .row
-  > .col-3
-  > .summoner-card-info
-  > .league-bar-container {
+  > .summoner-card-mastery
+  > .summoner-card-mastery-champion
+  > .champion-icon
+  > img {
+  border-radius: 50%;
+  height: inherit;
+}
+/* Points formated */
+.summoner-card-desktop
+  > .summoner-card-container
+  > .row
+  > .summoner-card-mastery
+  > .summoner-card-mastery-champion
+  > .champion-points-formated {
+  position: absolute;
+  z-index: 1;
+  font-family: "Baloo 2", "Asap";
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  height: 13px;
+  color: #fff;
+  border-radius: 0 0 110px 110px;
+}
+
+/* Win loss bar */
+.summoner-card-desktop > .summoner-card-container > .row > .col-3 > .summoner-card-info > .league-bar-container {
   display: flex;
   align-items: center;
   justify-content: center;

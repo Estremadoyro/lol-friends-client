@@ -48,22 +48,19 @@
 /* Summoner card border 4 sides */
 .summoner-border-challenger {
   border: double 7px transparent;
-  background-image: linear-gradient(white, white),
-    radial-gradient(circle at top, #f4c874 0%, #3fbfdd 100%);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top, #f4c874 0%, #3fbfdd 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 .summoner-border-grandmaster {
   border: double 7px transparent;
-  background-image: linear-gradient(white, white),
-    radial-gradient(circle at top, #756572 0%, #cd4545 100%);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top, #756572 0%, #cd4545 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 .summoner-border-master {
   border: double 7px transparent;
-  background-image: linear-gradient(white, white),
-    radial-gradient(circle at top, #a5584e 0%, #9d48e0 100%);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top, #a5584e 0%, #9d48e0 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -275,3 +272,6 @@
 .summoner-league-division-unranked {
   background-color: rgba(95, 95, 123);
 }
+
+/* Mastery level color  */
+/* .summoner-level */
