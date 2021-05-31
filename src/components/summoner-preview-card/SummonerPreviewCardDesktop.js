@@ -23,7 +23,7 @@ export const SummonerPreviewCardDesktop = ({ player }) => {
           className={`summoner-card-container summoner-border-${player.highestLeague} shadow-lg`}
           id="summoner-card-id"
         >
-          <div className="row">
+          <div className="row" id="summoner-card-row">
             <div className={`col-8 summoner-card-image-container summoner-border-right-${player.highestLeague}`}>
               <div className="summoner-card-region-level">
                 <span

@@ -8,16 +8,23 @@ import Loader from "react-loader-spinner";
 export const SummonerPreviewCardDownload = ({ player }) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const card = $(".summoner-card-desktop")[0];
+    const card = $("#summoner-card-desktop-id")[0];
     $("#summoner-download-btn").on("click", () => {
       setLoading(true);
       html2canvas(card, {
         useCORS: true,
         proxy: "nodejs",
         allowTaint: true,
+        backgroundColor: null,
+        foreignObjectRendering: false,
         onclone: (document) => {
-          document.getElementById("summoner-card-id").style.marginBottom = 0;
-          document.getElementById("summoner-card-desktop-id").style.width = 700;
+          document.getElementById("summoner-card-row").style.height = "10px";
+          // document.getElementById("summoner-card-id").style.marginBottom = 0;
+          // document.getElementById("summoner-card-id").style.marginTop = 0;
+          // document.getElementById("summoner-card-desktop-id").style.width = 700;
+          // document.getElementById("summoner-card-id").setAttribute("style", "margin: 0px !important");
+          // document.getElementById("summoner-card-desktop-id").setAttribute("style", "width: 700px !important");
+          // document.getElementById("summoner-card-desktop-id").setAttribute("style", "margin-top: 10px !important");
         },
       }).then((canvas) => {
         canvas.toBlob((blob) => {
