@@ -1,9 +1,11 @@
 .input-large[class="input-large"] {
   width: 100px;
 }
-.home-summoner-btn {
-  background-color: #6466f5;
+.search-summoner-form > .home-summoner-btn {
+  background: -webkit-linear-gradient(left, #928afc -3.77%, #6466f5 114.05%);
+  box-shadow: 3px 6px 30px rgb(100 102 245 / 55%);
+  -webkit-box-shadow: 3px 6px 30px rgb(100 102 245 / 55%);
   border-color: #928afc;
   color: white;
-  box-shadow: 0 6px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  transition: all 0.2s;
 }

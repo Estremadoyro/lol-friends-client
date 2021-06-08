@@ -23,7 +23,7 @@ const SearchSummonerBar = ({ searchSummonerAction, region, loading }) => {
   }, [region]);
   return (
     <>
-      <form className="form-group" onSubmit={searchSummoner} autoComplete="off">
+      <form className="form-group search-summoner-form" onSubmit={searchSummoner} autoComplete="off">
         <div className="input-group my-3 shadow-sm">
           <input
             type="text"
