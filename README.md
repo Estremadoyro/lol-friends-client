@@ -26,7 +26,7 @@ See also: https://github.com/Estremadoyro/lol-friends-server
 
 - Search lol players across all servers
 - News section redirected to surrender20.com
-- ![alt text](https://i.ibb.co/x3hFNFg/Capture.png)
+- ![alt text](https://i.ibb.co/BGFkbY2/Capture.png)
 
 ## Leaderboard
 
