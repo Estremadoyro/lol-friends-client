@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState } from "react";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -21,59 +21,36 @@ import Emoji from "../../misc/Emoji";
 import "../../styles/Leaderboard.css";
 import "../../styles/Pagination.css";
 
-const Leaderboard = ({
-  players,
-  league,
-  region,
-  loading,
-  error,
-  loadLeaderboardAction,
-}) => {
+const Leaderboard = ({ players, league, region, loading, error, loadLeaderboardAction }) => {
   // console.log(process.env.NODE_ENV);
   // console.log(league);
   const [pageNumber, setPageNumber] = useState(0);
   const playersPerPage = 25;
   const pagesVisited = pageNumber * playersPerPage;
 
-  const getPlayers = async () => {
-    loadLeaderboardAction(region, league);
-  };
+  const displayPlayers = players.slice(pagesVisited, pagesVisited + playersPerPage).map((player) => {
+    return (
+      <tr key={player.summonerId}>
+        <td className="align-middle" style={{ textAlign: "left" }}>
+          <span className={`badge rank-badge-${player.rank < 4 ? player.rank : "default"} m-2`}>{player.rank}</span>
+          <span className="leaderboard-summoner-name">{player.summonerName}</span>
+        </td>
+        <td className="align-middle">{player.leaguePoints}</td>
+        <td className="align-middle">
+          <WRBar wins={player.wins} losses={player.losses} />
+        </td>
+        <td className="align-middle">
+          <WRPerc wins={player.wins} losses={player.losses} />
+        </td>
+        <td className="align-middle">
+          <UpdatedRank rankUpdate={player.rankUpdate} rankOffset={player.rankOffset} />
+        </td>
+      </tr>
+    );
+  });
 
-  const displayPlayers = players
-    .slice(pagesVisited, pagesVisited + playersPerPage)
-    .map((player) => {
-      return (
-        <tr key={player.summonerId}>
-          <td className="align-middle" style={{ textAlign: "left" }}>
-            <span
-              className={`badge rank-badge-${
-                player.rank < 4 ? player.rank : "default"
-              } m-2`}
-            >
-              {player.rank}
-            </span>
-            <span className="leaderboard-summoner-name">
-              {player.summonerName}
-            </span>
-          </td>
-          <td className="align-middle">{player.leaguePoints}</td>
-          <td className="align-middle">
-            <WRBar wins={player.wins} losses={player.losses} />
-          </td>
-          <td className="align-middle">
-            <WRPerc wins={player.wins} losses={player.losses} />
-          </td>
-          <td className="align-middle">
-            <UpdatedRank
-              rankUpdate={player.rankUpdate}
-              rankOffset={player.rankOffset}
-            />
-          </td>
-        </tr>
-      );
-    });
   useEffect(() => {
-    getPlayers();
+    loadLeaderboardAction(region, league);
   }, [region, league]);
 
   return (
@@ -81,12 +58,7 @@ const Leaderboard = ({
       <div className="container text-center" style={{ maxWidth: "720px" }}>
         <LeagueSelector />
         {loading && <LeaderboardInfoSkeleton />}
-        {players.length > 0 && (
-          <LeaderboardInfo
-            playerCount={players.length}
-            updateTime={players[0].updateTime}
-          />
-        )}
+        {players.length > 0 && <LeaderboardInfo playerCount={players.length} updateTime={players[0].updateTime} />}
         <div className="table-responsive">
           <table className="table mx-auto w-auto">
             <thead>
@@ -109,13 +81,7 @@ const Leaderboard = ({
               </tr>
             </thead>
             <tbody>
-              {loading ? (
-                <LeaderboardSkeleton
-                  players={players.slice(0, playersPerPage)}
-                />
-              ) : (
-                displayPlayers
-              )}
+              {loading ? <LeaderboardSkeleton players={players.slice(0, playersPerPage)} /> : displayPlayers}
             </tbody>
           </table>
         </div>
@@ -125,10 +91,7 @@ const Leaderboard = ({
             <br />
             <div>
               Please let
-              <a
-                href="https://www.instagram.com/leoestremadoyro/"
-                target="blank_"
-              >
+              <a href="https://www.instagram.com/leoestremadoyro/" target="blank_">
                 <span className="error-contact-link fw-bold"> me </span>
               </a>
               know

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import Emoji from "../misc/Emoji";
 
 import { searchSummonerAction } from "../actions/summonerAction";
 
@@ -39,7 +40,7 @@ const SearchSummonerBar = ({ searchSummonerAction, region, loading }) => {
           </span>
         </div>
         <button className="btn home-summoner-btn btn-block w-100" type="submit" disabled={loading}>
-          Find player owo!
+          Find player &nbsp; <Emoji symbol="🚀" label="rocket" />
         </button>
       </form>
     </>

@@ -32,10 +32,11 @@ const Home = ({ player, loading, error }) => {
           </a>{" "}
           for the PS preview.{" "}
         </p>
-        <h3 className="fw-bold text-center">News</h3>
-        <HomeNews />
+        {/* Commented until deploying API v1.2 */}
+        {/* <h3 className="fw-bold text-center">News</h3> */}
+        {/* <HomeNews /> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/HomeNews.css";
-import "../scripts/HomeNews.js";
 export const HomeNews = () => {
   const [news, setNews] = useState([]);
   const getNews = async () => {

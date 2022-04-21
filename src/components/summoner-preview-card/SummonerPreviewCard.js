@@ -13,7 +13,10 @@ export const SummonerPreviewCard = ({ player }) => {
   switch (screenType) {
     case "isHorizontalCard":
       return <SummonerPreviewCardDesktop player={player} />;
+    // Not yet implemented
     case "isVerticalCard":
       return <SummonerPreviewCardMobile player={player} />;
+    default:
+      return <SummonerPreviewCardDesktop player={player} />;
   }
 };
